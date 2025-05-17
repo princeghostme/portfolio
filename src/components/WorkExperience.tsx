@@ -53,11 +53,11 @@ const WorkExperience = () => {
             <div className="mx-auto">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h1 className="text-4xl md:text-5xl font-bold text-red-900 mb-4">
-                        Professional <span className="text-red-600">Experience</span>
+                    <h1 className="text-4xl md:text-5xl font-bold text-purple-900 mb-4">
+                        Professional <span className="text-purple-600">Experience</span>
                     </h1>
-                    <div className="w-24 h-1.5 bg-red-500 mx-auto rounded-full mb-6"></div>
-                    <p className="text-xl text-red-700 max-w-3xl mx-auto">
+                    <div className="w-24 h-1.5 bg-purple-500 mx-auto rounded-full mb-6"></div>
+                    <p className="text-xl text-purple-700 max-w-3xl mx-auto">
                         My journey through diverse roles and responsibilities in software development
                     </p>
                 </div>
@@ -68,33 +68,33 @@ const WorkExperience = () => {
                         <div key={index} className="relative group">
 
                             {/* Content */}
-                            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-red-50">
+                            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-purple-50">
                                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
-                                    <h3 className="text-xl font-bold text-red-800">{exp.position}</h3>
+                                    <h3 className="text-xl font-bold text-purple-800">{exp.position}</h3>
                                     <div className="flex items-center mt-1 sm:mt-0">
-                                        <span className="text-sm font-medium text-red-600 bg-red-100 px-3 py-1 rounded-full">
+                                        <span className="text-sm font-medium text-purple-600 bg-purple-100 px-3 py-1 rounded-full">
                                             {exp.duration}
                                         </span>
                                     </div>
                                 </div>
-                                <h4 className="text-lg font-semibold text-red-700 mt-1">{exp.company}</h4>
-                                <p className="text-sm text-red-500 mb-4">{exp.location}</p>
+                                <h4 className="text-lg font-semibold text-purple-700 mt-1">{exp.company}</h4>
+                                <p className="text-sm text-purple-500 mb-4">{exp.location}</p>
 
                                 <ul className="space-y-2 mt-4">
                                     {exp.responsibilities.map((item, i) => (
                                         <li key={i} className="flex items-start">
                                             <div className="flex-shrink-0 mt-1.5">
-                                                <div className="w-2 h-2 bg-red-400 rounded-full"></div>
+                                                <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
                                             </div>
                                             <p className="ml-2 text-gray-700">{item}</p>
                                         </li>
                                     ))}
                                 </ul>
 
-                                <div className="mt-6 pt-4 border-t border-red-100">
+                                <div className="mt-6 pt-4 border-t border-purple-100">
                                     <div className="flex flex-wrap gap-2">
                                         {exp.technologies.map((tech, i) => (
-                                            <span key={i} className="text-xs font-medium px-3 py-1 bg-red-100 text-red-700 rounded-full">
+                                            <span key={i} className="text-xs font-medium px-3 py-1 bg-purple-100 text-purple-700 rounded-full">
                                                 {tech}
                                             </span>
                                         ))}

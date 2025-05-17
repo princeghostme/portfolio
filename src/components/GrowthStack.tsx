@@ -56,7 +56,7 @@ const GrowthStack = () => {
   return (
     <div className="mx-auto w-full px-4 py-10">
       {/* Timeline Visualization */}
-      <div className="relative h-3 bg-red-100 rounded-full mb-12">
+      <div className="relative h-3 bg-purple-100 rounded-full mb-12">
         {/* Progress Line */}
         {growthData.map((_, index) => {
           if (index === 0) return null;
@@ -64,7 +64,7 @@ const GrowthStack = () => {
           return (
             <div
               key={`progress-${index}`}
-              className="absolute h-3 bg-red-500 rounded-full transition-all duration-700 ease-in-out"
+              className="absolute h-3 bg-purple-500 rounded-full transition-all duration-700 ease-in-out"
               style={{ width, left: "87%" }}
             ></div>
           );
@@ -76,7 +76,7 @@ const GrowthStack = () => {
           return (
             <div
               key={`marker-${index}`}
-              className="absolute -top-1.5 w-5 h-5 bg-white border-4 border-red-600 rounded-full shadow"
+              className="absolute -top-1.5 w-5 h-5 bg-white border-4 border-purple-600 rounded-full shadow"
               style={{ left: position, transform: "translateX(-50%)" }}
             />
           );
@@ -88,7 +88,7 @@ const GrowthStack = () => {
           return (
             <div
               key={`year-${index}`}
-              className="absolute top-6 text-[11px] text-center font-medium text-red-700 w-20"
+              className="absolute top-6 text-[11px] text-center font-medium text-purple-700 w-20"
               style={{ left: position, transform: "translateX(-50%)" }}
             >
               {item.year}
@@ -113,9 +113,9 @@ const GrowthStack = () => {
             className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-200"
           >
             <div className="flex items-start gap-4">
-              <div className="p-2 rounded-full bg-red-100">
+              <div className="p-2 rounded-full bg-purple-100">
                 <svg
-                  className="h-5 w-5 text-red-600"
+                  className="h-5 w-5 text-purple-600"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -129,7 +129,7 @@ const GrowthStack = () => {
                 </svg>
               </div>
               <div>
-                <h4 className="text-base font-semibold text-red-800">
+                <h4 className="text-base font-semibold text-purple-800">
                   {item.company}
                 </h4>
                 <p className="text-sm text-gray-700 mt-1">{item.title}</p>

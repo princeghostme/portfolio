@@ -42,10 +42,10 @@ const AISkillsDetailSection: React.FC = () => {
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                        AI <span className="text-red-600">Productivity</span> Expertise
+                        AI <span className="text-purple-600">Productivity</span> Expertise
                     </h2>
-                    <div className="w-20 h-1 bg-red-500 mx-auto rounded-full mb-4"></div>
-                    <p className="text-xl text-red-600 max-w-3xl mx-auto">
+                    <div className="w-20 h-1 bg-purple-500 mx-auto rounded-full mb-4"></div>
+                    <p className="text-xl text-purple-600 max-w-3xl mx-auto">
                         Leveraging artificial intelligence to enhance writing, development, and workflow efficiency
                     </p>
                 </div>
@@ -56,11 +56,11 @@ const AISkillsDetailSection: React.FC = () => {
                             key={index}
                             className="rounded-lg shadow-sm transition-all hover:scale-105"
                         >
-                            <div className="px-6 py-4 border-red-200">
-                                <h3 className="text-xl font-semibold text-red-800">
+                            <div className="px-6 py-4 border-purple-200">
+                                <h3 className="text-xl font-semibold text-purple-800">
                                     {skillGroup.category}
                                 </h3>
-                                <div className={`w-16 h-1 bg-red-500 rounded-full mt-2`}></div>
+                                <div className={`w-16 h-1 bg-purple-500 rounded-full mt-2`}></div>
                             </div>
                             <div className="p-6">
                                 <ul className="space-y-3">
@@ -70,9 +70,9 @@ const AISkillsDetailSection: React.FC = () => {
                                             className="flex items-start"
                                         >
                                             <div className="flex-shrink-0 mt-1">
-                                                <div className="w-1.5 h-1.5 bg-red-500 rounded-full mr-3"></div>
+                                                <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3"></div>
                                             </div>
-                                            <span className="hover:text-red-800">{skill}</span>
+                                            <span className="hover:text-purple-800">{skill}</span>
                                         </li>
                                     ))}
                                 </ul>
@@ -81,9 +81,9 @@ const AISkillsDetailSection: React.FC = () => {
                     ))}
                 </div>
 
-                <div className="mt-16 bg-red-50 rounded-xl p-8 border border-red-100">
-                    <h3 className="text-2xl font-semibold text-red-800 mb-6">How AI Boosts Productivity</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-red-700">
+                <div className="mt-16 bg-purple-50 rounded-xl p-8 border border-purple-100">
+                    <h3 className="text-2xl font-semibold text-purple-800 mb-6">How AI Boosts Productivity</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-purple-700">
                         <div>
                             <h4 className="font-medium mb-3">Prompt Engineering</h4>
                             <p>

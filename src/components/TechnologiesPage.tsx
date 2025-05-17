@@ -118,11 +118,11 @@ const TechnologiesDetails = () => {
     const getLevelColor = (level: string) => {
         switch (level) {
             case "Advanced":
-                return "bg-red-200 text-red-700";
+                return "bg-purple-200 text-purple-700";
             case "Intermediate":
-                return "bg-red-100 text-red-700";
+                return "bg-purple-100 text-purple-700";
             case "Basic":
-                return "bg-red-50 text-red-700";
+                return "bg-purple-50 text-purple-700";
             default:
                 return "bg-gray-100 text-gray-800";
         }
@@ -158,38 +158,38 @@ const TechnologiesDetails = () => {
         <div className="min-h-screen bg-white py-16 px-4 sm:px-6 lg:px-8">
             <div className="w-full mx-auto mt-10">
                 <div className="text-center mb-16">
-                    <h1 className="text-4xl md:text-5xl font-bold text-red-900 mb-4">
-                        Full <span className="text-red-600">Technical Breakdown</span>
+                    <h1 className="text-4xl md:text-5xl font-bold text-purple-900 mb-4">
+                        Full <span className="text-purple-600">Technical Breakdown</span>
                     </h1>
-                    <div className="w-24 h-1.5 bg-red-500 mx-auto rounded-full mb-6"></div>
-                    <p className="text-xl text-red-700 max-w-3xl mx-auto">
+                    <div className="w-24 h-1.5 bg-purple-500 mx-auto rounded-full mb-6"></div>
+                    <p className="text-xl text-purple-700 max-w-3xl mx-auto">
                         Comprehensive view of all technologies in my stack.
                     </p>
                 </div>
 
-                <div className="mb-12 bg-red-50 rounded-lg p-6 shadow-sm">
+                <div className="mb-12 bg-purple-50 rounded-lg p-6 shadow-sm">
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                         <div className="md:col-span-2">
-                            <label htmlFor="search" className="block text-sm font-medium text-red-700 mb-1">
+                            <label htmlFor="search" className="block text-sm font-medium text-purple-700 mb-1">
                                 Search Technologies
                             </label>
                             <input
                                 type="text"
                                 id="search"
                                 placeholder="Search by name or level..."
-                                className="w-full px-4 py-2 border border-red-300 rounded-md focus:ring-red-500 focus:border-red-500"
+                                className="w-full px-4 py-2 border border-purple-300 rounded-md focus:ring-purple-500 focus:border-purple-500"
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                             />
                         </div>
 
                         <div>
-                            <label htmlFor="category" className="block text-sm font-medium text-red-700 mb-1">
+                            <label htmlFor="category" className="block text-sm font-medium text-purple-700 mb-1">
                                 Filter by Category
                             </label>
                             <select
                                 id="category"
-                                className="w-full px-4 py-2 border border-red-300 rounded-md focus:ring-red-500 focus:border-red-500"
+                                className="w-full px-4 py-2 border border-purple-300 rounded-md focus:ring-purple-500 focus:border-purple-500"
                                 value={selectedCategory || ''}
                                 onChange={(e) => setSelectedCategory(e.target.value || null)}
                             >
@@ -201,12 +201,12 @@ const TechnologiesDetails = () => {
                         </div>
 
                         <div>
-                            <label htmlFor="level" className="block text-sm font-medium text-red-700 mb-1">
+                            <label htmlFor="level" className="block text-sm font-medium text-purple-700 mb-1">
                                 Filter by Level
                             </label>
                             <select
                                 id="level"
-                                className="w-full px-4 py-2 border border-red-300 rounded-md focus:ring-red-500 focus:border-red-500"
+                                className="w-full px-4 py-2 border border-purple-300 rounded-md focus:ring-purple-500 focus:border-purple-500"
                                 value={selectedLevel || ''}
                                 onChange={(e) => setSelectedLevel(e.target.value || null)}
                             >
@@ -222,7 +222,7 @@ const TechnologiesDetails = () => {
                         <div className="mt-4 text-right">
                             <button
                                 onClick={clearFilters}
-                                className="text-red-600 hover:text-red-800 text-sm font-medium"
+                                className="text-purple-600 hover:text-purple-800 text-sm font-medium"
                             >
                                 Clear all filters
                             </button>
@@ -235,15 +235,15 @@ const TechnologiesDetails = () => {
                         {filteredTechnologies.map((tech, index) => (
                             <div
                                 key={index}
-                                className="bg-white rounded-xl p-5 shadow-lg hover:shadow-xl transition duration-300 overflow-hidden border border-red-50"
+                                className="bg-white rounded-xl p-5 shadow-lg hover:shadow-xl transition duration-300 overflow-hidden border border-purple-50"
                             >
-                                <h3 className="text-xl font-semibold text-red-800 mb-4 pb-2 border-b border-red-100">
+                                <h3 className="text-xl font-semibold text-purple-800 mb-4 pb-2 border-b border-purple-100">
                                     {tech.category}
                                 </h3>
                                 <ul className="space-y-3">
                                     {tech.items.map((item, itemIndex) => (
                                         <li key={itemIndex} className="flex justify-between items-center">
-                                            <span className="text-red-900 font-medium">{item.name}</span>
+                                            <span className="text-purple-900 font-medium">{item.name}</span>
                                             <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full ${getLevelColor(item.level)}`}>
                                                 {item.level}
                                             </span>
@@ -254,27 +254,27 @@ const TechnologiesDetails = () => {
                         ))}
                     </div>
                 ) : (
-                    <div className="text-center py-12 bg-red-50 rounded-lg mb-16">
-                        <p className="text-red-700 text-lg">No technologies match your filters.</p>
+                    <div className="text-center py-12 bg-purple-50 rounded-lg mb-16">
+                        <p className="text-purple-700 text-lg">No technologies match your filters.</p>
                     </div>
                 )}
 
                 {/* Additional Skills */}
-                <div className="mt-16 bg-white rounded-xl shadow-lg p-8 border border-red-50">
-                    <h2 className="text-2xl font-bold text-red-800 mb-6">Additional Skills & Knowledge</h2>
+                <div className="mt-16 bg-white rounded-xl shadow-lg p-8 border border-purple-50">
+                    <h2 className="text-2xl font-bold text-purple-800 mb-6">Additional Skills & Knowledge</h2>
                     {filteredAdditionalSkills.length > 0 ? (
                         <div className="flex flex-wrap gap-3">
                             {filteredAdditionalSkills.map((skill, index) => (
                                 <span
                                     key={index}
-                                    className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-100 text-red-800"
+                                    className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800"
                                 >
                                     {skill}
                                 </span>
                             ))}
                         </div>
                     ) : (
-                        <p className="text-red-600">No additional skills match your search.</p>
+                        <p className="text-purple-600">No additional skills match your search.</p>
                     )}
                 </div>
             </div>
