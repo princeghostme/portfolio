@@ -79,7 +79,7 @@ export const TopNavBar = () => {
               <a
                 key={index}
                 href={item.url}
-                className="block text-gray-700 hover:text-red-600 text-sm font-medium px-4 py-2 transition-colors duration-200 flex items-center"
+                className="block text-gray-700 hover:text-red-600 text-sm font-medium px-4 py-2 transition-colors duration-200 items-center"
                 onClick={() => setShowMobileMenu(false)}
               >
                 <span className="mr-3 text-lg">{item.icon}</span>
