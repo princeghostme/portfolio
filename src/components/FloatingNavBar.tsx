@@ -1,8 +1,8 @@
 import { useState, useEffect, type JSX } from 'react';
-import { FaLinkedin, FaWhatsapp, FaDownload, FaHome, FaBriefcase, FaCode, FaProjectDiagram, FaAddressCard, FaBars } from 'react-icons/fa';
+import { FaLinkedin, FaWhatsapp, FaDownload, FaHome, FaBriefcase, FaCode, FaProjectDiagram, FaAddressCard, FaBars, FaPhone, FaEnvelope, FaMapMarkerAlt, FaTimes } from 'react-icons/fa';
 import resume from '../assets/resume.pdf';
 import { Link } from 'react-router-dom';
-import profileimg from '../assets/profileImg.jpeg'
+import profileimg from '../assets/profileImg.jpeg';
 
 export interface NavItem {
   showText: string;
@@ -18,11 +18,11 @@ const navItems: NavItem[] = [
   { showText: 'Contact', url: '/aboutme', icon: <FaAddressCard /> },
 ];
 
-// Sample user object
 const user = {
   name: 'Prince Yadav',
   title: 'Full-Stack .NET & Azure Developer',
   email: 'yaduvanshiprince2007@gmail.com',
+  phone: '+91 7004571707',
   location: 'Bangalore, India',
   imageUrl: profileimg,
   resumeUrl: resume,
@@ -45,43 +45,56 @@ export const TopNavBar = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const handleCall = () => {
+    window.open(`tel:${user.phone.replace(/\D/g, '')}`);
+  };
+
+  const handleWhatsApp = () => {
+    window.open(user.whatsapp, '_blank');
+  };
+
+  const handleEmail = () => {
+    window.open(`mailto:${user.email}`);
+  };
+
   return (
     <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-4xl px-4">
-      <div className="bg-white/70 backdrop-blur-md shadow-lg rounded-xl px-4 py-2 flex justify-between items-center border border-gray-200">
+      <div className="bg-white/80 backdrop-blur-lg shadow-lg rounded-xl px-4 py-2 flex justify-between items-center border border-gray-200">
         {/* Mobile menu button */}
         {isMobile && (
           <button
             onClick={() => setShowMobileMenu(!showMobileMenu)}
-            className="text-gray-700 p-2 rounded-full hover:bg-gray-100"
+            className="text-gray-700 p-2 rounded-full hover:bg-gray-100 transition-colors"
+            aria-label="Toggle menu"
           >
-            <FaBars />
+            <FaBars size={20} />
           </button>
         )}
 
-        {/* Regular navigation items (hidden on mobile) */}
+        {/* Default navigation items (unchanged size) */}
         {!isMobile && (
-          <div className="flex space-x-4">
+          <div className="flex space-x-2">
             {navItems.map((item, index) => (
               <Link
                 key={index}
                 to={item.url}
-                className="text-gray-700 hover:text-red-600 text-sm font-medium px-3 py-1 rounded-full transition-colors duration-200 flex items-center"
+                className="text-gray-700 hover:text-red-600 text-sm font-medium px-3 py-1.5 rounded-lg transition-colors duration-200 flex items-center hover:bg-gray-100/50"
               >
-                <span className="mr-2">{item.icon}</span>
+                <span className="mr-2 text-base">{item.icon}</span>
                 {item.showText}
               </Link>
             ))}
           </div>
         )}
 
-        {/* Mobile menu (shown when toggled) */}
+        {/* Mobile menu */}
         {isMobile && showMobileMenu && (
-          <div className="absolute top-12 left-0 w-full bg-white/90 backdrop-blur-md rounded-xl shadow-lg py-2 z-50">
+          <div className="absolute top-12 left-0 w-full bg-white/95 backdrop-blur-lg rounded-xl shadow-xl py-3 z-50 border border-gray-100">
             {navItems.map((item, index) => (
               <Link
                 key={index}
                 to={item.url}
-                className="block text-gray-700 hover:text-red-600 text-sm font-medium px-4 py-2 transition-colors duration-200 items-center"
+                className="flex items-center text-gray-700 hover:text-red-600 text-base font-medium px-4 py-2.5 transition-colors duration-200 hover:bg-gray-50"
                 onClick={() => setShowMobileMenu(false)}
               >
                 <span className="mr-3 text-lg">{item.icon}</span>
@@ -91,91 +104,119 @@ export const TopNavBar = () => {
           </div>
         )}
 
-        {/* Icons-only navigation for mobile (when menu not expanded) */}
-        {isMobile && !showMobileMenu && (
-          <div className="flex space-x-2">
-            {navItems.slice(0, 3).map((item, index) => (
-              <Link
-                key={index}
-                to={item.url}
-                className="text-gray-700 hover:text-red-600 p-2 rounded-full transition-colors duration-200"
-                title={item.showText}
-              >
-                {item.icon}
-              </Link>
-            ))}
-          </div>
-        )}
+        {/* Profile section with seamless transition */}
+        <div className="relative">
+          <div className="relative">
+            {/* Profile image button */}
+            <button
+              onClick={() => setShowUserDetails(!showUserDetails)}
+              onMouseEnter={() => !isMobile && setShowUserDetails(true)}
+              className={`w-10 h-10 rounded-xl border-2 ${showUserDetails ? 'border-red-500' : 'border-gray-300 hover:border-red-500'} transition-all duration-300 overflow-hidden`}
+              aria-label="User profile"
+            >
+              <img
+                src={user.imageUrl}
+                alt="User profile"
+                className="w-full h-full object-cover"
+              />
+            </button>
 
-        {/* Profile Image with Hover Detail */}
-        <div
-          className="relative"
-          onMouseEnter={() =>setShowUserDetails(true)}
-          onClick={() => setShowUserDetails(!showUserDetails)}
-        >
-          <img
-            src={user.imageUrl}
-            alt="User"
-            className="w-8 h-8 rounded-xl border-2 border-gray-300 cursor-pointer hover:border-red-500 transition duration-300"
-          />
-
-          {showUserDetails && (
-            <div className={`absolute ${isMobile ? 'right-0' : 'right-0'} top-10 mt-2 w-64 bg-red-50 rounded-lg shadow-xl border border-gray-200 p-4 text-sm z-50`}>
+            {/* Profile details panel */}
+            <div 
+              className={`absolute right-0 top-0 w-75 bg-white rounded-lg shadow-xl  overflow-hidden transition-all duration-800 ${showUserDetails ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}
+              onMouseLeave={() => !isMobile && setShowUserDetails(false)}
+            >
               {/* Close Button */}
               <button
-                className="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-xs font-bold"
                 onClick={() => setShowUserDetails(false)}
-                title="Close"
+                className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-lg bg-red-100 hover:bg-red-200 transition-colors z-10"
+                aria-label="Close profile"
               >
-                ✕
+                <FaTimes className="text-red-500" />
               </button>
 
-              <div className="flex items-center space-x-3 mb-3">
+              {/* Profile Header */}
+              <div className="flex items-center space-x-4 p-4 border-b border-gray-100">
                 <img
                   src={user.imageUrl}
                   alt="User Detail"
-                  className="w-12 h-12 rounded-xl border border-gray-300"
+                  className="w-14 h-14 rounded-xl border-2 border-white shadow-sm object-cover"
                 />
                 <div>
-                  <p className="font-semibold text-gray-900">{user.name}</p>
+                  <h3 className="font-bold text-gray-900">{user.name}</h3>
                   <p className="text-gray-600 text-xs">{user.title}</p>
                 </div>
               </div>
 
-              <p className="text-gray-500 text-sm">{user.email}</p>
-              <p className="text-gray-500 text-sm">{user.location}</p>
+              {/* Contact Info */}
+              <div className="p-4 space-y-3">
+                <div className="flex items-center text-gray-700">
+                  <FaEnvelope className="text-red-400 mr-3 min-w-[16px]" />
+                  <span className="text-sm truncate">{user.email}</span>
+                </div>
+                
+                <div className="flex items-center text-gray-700">
+                  <FaPhone className="text-red-400 mr-3 min-w-[16px]" />
+                  <span className="text-sm">{user.phone}</span>
+                </div>
+                
+                <div className="flex items-center text-gray-700">
+                  <FaMapMarkerAlt className="text-red-400 mr-3 min-w-[16px]" />
+                  <span className="text-sm">{user.location}</span>
+                </div>
+              </div>
 
-              {/* Social & Resume Icons */}
-              <div className="flex space-x-4 mt-3 items-center">
+              {/* Action Buttons */}
+              <div className="grid grid-cols-2 gap-2 p-4 border-t border-gray-100">
+                <button
+                  onClick={handleCall}
+                  className="flex items-center justify-center space-x-2 bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-3 rounded-lg text-sm transition-colors"
+                >
+                  <FaPhone className="text-green-500" />
+                  <span>Call</span>
+                </button>
+                
+                <button
+                  onClick={handleWhatsApp}
+                  className="flex items-center justify-center space-x-2 bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-3 rounded-lg text-sm transition-colors"
+                >
+                  <FaWhatsapp className="text-green-500" />
+                  <span>WhatsApp</span>
+                </button>
+              </div>
+
+              {/* Social & Resume */}
+              <div className="flex justify-between items-center p-4">
                 <a
                   href={user.resumeUrl}
                   download
-                  title="Download Resume"
-                  className="text-gray-600 hover:text-red-600 transition"
+                  className="flex items-center space-x-2 text-gray-700 hover:text-red-600 transition text-sm font-medium"
                 >
-                  <FaDownload size={18} />
+                  <FaDownload />
+                  <span>Resume</span>
                 </a>
-                <a
-                  href={user.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="Contact on WhatsApp"
-                  className="text-gray-600 hover:text-green-600 transition"
-                >
-                  <FaWhatsapp size={18} />
-                </a>
-                <a
-                  href={user.linkedIn}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="LinkedIn Profile"
-                  className="text-gray-600 hover:text-sky-700 transition"
-                >
-                  <FaLinkedin size={18} />
-                </a>
+                
+                <div className="flex space-x-3">
+                  <a
+                    href={user.linkedIn}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-blue-700 transition"
+                    title="LinkedIn"
+                  >
+                    <FaLinkedin size={18} />
+                  </a>
+                  <button
+                    onClick={handleEmail}
+                    className="text-gray-600 hover:text-red-500 transition"
+                    title="Email"
+                  >
+                    <FaEnvelope size={18} />
+                  </button>
+                </div>
               </div>
             </div>
-          )}
+          </div>
         </div>
       </div>
     </nav>

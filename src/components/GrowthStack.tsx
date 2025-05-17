@@ -28,7 +28,7 @@ const GrowthStack = () => {
     {
       year: "2022",
       title: "Enterprise Systems",
-      company: "Enaviya Information Technology",
+      company: "Enaviya IT",
       duration: "Feb 2022 - Dec 2023",
     },
     {
@@ -54,10 +54,10 @@ const GrowthStack = () => {
   };
 
   return (
-    <div className="mx-auto w-full px-4 py-10">
+    <div className="w-full max-w-7xl mx-auto px-4 py-14">
       {/* Timeline Visualization */}
-      <div className="relative h-3 bg-red-100 rounded-full mb-12">
-        {/* Progress Line */}
+      <div className="relative h-3 bg-gradient-to-r from-red-200 to-red-100 rounded-full mb-16 shadow-inner">
+        {/* Progress Lines */}
         {growthData.map((_, index) => {
           if (index === 0) return null;
           const { width } = calculatePositions(index, growthData.length);
@@ -65,18 +65,18 @@ const GrowthStack = () => {
             <div
               key={`progress-${index}`}
               className="absolute h-3 bg-red-500 rounded-full transition-all duration-700 ease-in-out"
-              style={{ width, left: "87%" }}
+              style={{ width, left: "85%" }}
             ></div>
           );
         })}
 
-        {/* Markers */}
+        {/* Timeline Markers */}
         {growthData.map((_, index) => {
           const { position } = calculatePositions(index, growthData.length);
           return (
             <div
               key={`marker-${index}`}
-              className="absolute -top-1.5 w-5 h-5 bg-white border-4 border-red-600 rounded-full shadow"
+              className="absolute -top-2 w-6 h-6 bg-white border-4 border-red-500 rounded-full shadow-md z-10"
               style={{ left: position, transform: "translateX(-50%)" }}
             />
           );
@@ -88,7 +88,7 @@ const GrowthStack = () => {
           return (
             <div
               key={`year-${index}`}
-              className="absolute top-6 text-[11px] text-center font-medium text-red-700 w-20"
+              className="absolute top-8 text-xs font-semibold text-red-700 w-24 text-center"
               style={{ left: position, transform: "translateX(-50%)" }}
             >
               {item.year}
@@ -98,44 +98,16 @@ const GrowthStack = () => {
       </div>
 
       {/* Experience Cards */}
-      <div
-        className={`grid gap-6 ${
-          growthData.length <= 3
-            ? "grid-cols-1 md:grid-cols-3"
-            : growthData.length <= 4
-            ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
-            : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-        }`}
-      >
+      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center">
         {[...growthData].reverse().map((item, index) => (
           <div
             key={`detail-${index}`}
-            className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-200"
+            className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition w-full max-w-xs"
           >
-            <div className="flex items-start gap-4">
-              <div className="p-2 rounded-full bg-red-100">
-                <svg
-                  className="h-5 w-5 text-red-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
-              </div>
-              <div>
-                <h4 className="text-base font-semibold text-red-800">
-                  {item.company}
-                </h4>
-                <p className="text-sm text-gray-700 mt-1">{item.title}</p>
-                <p className="text-xs text-gray-500 mt-1">{item.duration}</p>
-              </div>
-            </div>
+            <div className="text-sm font-semibold text-red-700">{item.company}</div>
+            <div className="text-xs text-gray-600">{item.title}</div>
+            <div className="text-xs text-gray-500">{item.duration}</div>
+            <div className="text-[10px] text-gray-400 mt-1">{item.year}</div>
           </div>
         ))}
       </div>
