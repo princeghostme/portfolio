@@ -78,15 +78,15 @@ export const TopNavBar = () => {
         {isMobile && showMobileMenu && (
           <div className="absolute top-12 left-0 w-full bg-white/90 backdrop-blur-md rounded-xl shadow-lg py-2 z-50">
             {navItems.map((item, index) => (
-              <a
+              <Link
                 key={index}
-                href={item.url}
+                to={item.url}
                 className="block text-gray-700 hover:text-rose-600 text-sm font-medium px-4 py-2 transition-colors duration-200 items-center"
                 onClick={() => setShowMobileMenu(false)}
               >
                 <span className="mr-3 text-lg">{item.icon}</span>
                 {item.showText}
-              </a>
+              </Link>
             ))}
           </div>
         )}
