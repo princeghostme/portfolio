@@ -110,7 +110,6 @@ export const TopNavBar = () => {
         <div
           className="relative"
           onMouseEnter={() => !isMobile && setShowUserDetails(true)}
-          onMouseLeave={() => !isMobile && setShowUserDetails(false)}
           onClick={() => isMobile && setShowUserDetails(!showUserDetails)}
         >
           <img
