@@ -11,11 +11,11 @@ export interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { showText: 'Home', url: '/#/', icon: <FaHome /> },
-  { showText: 'Work & Internships', url: '/#/work', icon: <FaBriefcase /> },
-  { showText: 'Skills', url: '/#/skills', icon: <FaCode /> },
-  { showText: 'Projects', url: '/#/projects', icon: <FaProjectDiagram /> },
-  { showText: 'Contact', url: '/#/aboutme', icon: <FaAddressCard /> },
+  { showText: 'Home', url: '/', icon: <FaHome /> },
+  { showText: 'Work & Internships', url: '/work', icon: <FaBriefcase /> },
+  { showText: 'Skills', url: '/skills', icon: <FaCode /> },
+  { showText: 'Projects', url: '/projects', icon: <FaProjectDiagram /> },
+  { showText: 'Contact', url: '/aboutme', icon: <FaAddressCard /> },
 ];
 
 // Sample user object
