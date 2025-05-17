@@ -2,6 +2,7 @@ import { useState, useEffect, type JSX } from 'react';
 import { FaLinkedin, FaWhatsapp, FaDownload, FaHome, FaBriefcase, FaCode, FaProjectDiagram, FaAddressCard, FaBars } from 'react-icons/fa';
 import resume from '../assets/resume.pdf';
 import { Link } from 'react-router-dom';
+import profileimg from '../assets/profileImg.jpeg'
 
 export interface NavItem {
   showText: string;
@@ -23,7 +24,7 @@ const user = {
   title: 'Full-Stack .NET & Azure Developer',
   email: 'yaduvanshiprince2007@gmail.com',
   location: 'Bangalore, India',
-  imageUrl: 'https://i.pravatar.cc/150?img=68',
+  imageUrl: profileimg,
   resumeUrl: resume,
   linkedIn: 'https://www.linkedin.com/in/prince-yadav-340b99134',
   whatsapp: 'https://wa.me/917004571707',
