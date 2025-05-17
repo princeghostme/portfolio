@@ -110,8 +110,8 @@ export const TopNavBar = () => {
         {/* Profile Image with Hover Detail */}
         <div
           className="relative"
-          onMouseEnter={() => !isMobile && setShowUserDetails(true)}
-          onClick={() => isMobile && setShowUserDetails(!showUserDetails)}
+          onMouseEnter={() =>setShowUserDetails(true)}
+          onClick={() => setShowUserDetails(!showUserDetails)}
         >
           <img
             src={user.imageUrl}
