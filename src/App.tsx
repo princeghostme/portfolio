@@ -1,4 +1,4 @@
-import { BrowserRouter as Router } from 'react-router-dom'
+import { HashRouter as Router } from 'react-router-dom'
 import ContactMe from './components/ContactMe '
 import { TopNavBar } from './components/FloatingNavBar'
 import AppRouter from './routers/AppRouter'
