@@ -95,14 +95,14 @@ export const TopNavBar = () => {
         {isMobile && !showMobileMenu && (
           <div className="flex space-x-2">
             {navItems.slice(0, 3).map((item, index) => (
-              <a
+              <Link
                 key={index}
-                href={item.url}
+                to={item.url}
                 className="text-gray-700 hover:text-red-600 p-2 rounded-full transition-colors duration-200"
                 title={item.showText}
               >
                 {item.icon}
-              </a>
+              </Link>
             ))}
           </div>
         )}
