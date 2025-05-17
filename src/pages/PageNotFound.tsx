@@ -4,7 +4,7 @@ const PageNotFound = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-rose-50 to-gray-100 flex items-center justify-center px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-gray-100 flex items-center justify-center px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8 text-center">
         <div className="relative">
           <div className="absolute -inset-4">
@@ -31,11 +31,11 @@ const PageNotFound = () => {
         <div className="mt-10">
           <button
             onClick={() => navigate(-1)}
-            className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-rose-600 hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500 transition-all duration-200 transform hover:scale-105"
+            className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-all duration-200 transform hover:scale-105"
           >
             <span className="absolute left-0 inset-y-0 flex items-center pl-3">
               <svg 
-                className="h-5 w-5 text-rose-300 group-hover:text-rose-200 transition-colors duration-200" 
+                className="h-5 w-5 text-purple-300 group-hover:text-purple-200 transition-colors duration-200" 
                 fill="none" 
                 stroke="currentColor" 
                 viewBox="0 0 24 24"
@@ -48,11 +48,11 @@ const PageNotFound = () => {
           
           <button
             onClick={() => navigate('/')}
-            className="mt-4 group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-rose-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500 shadow-sm transition-all duration-200 transform hover:scale-105"
+            className="mt-4 group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-purple-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 shadow-sm transition-all duration-200 transform hover:scale-105"
           >
             <span className="absolute left-0 inset-y-0 flex items-center pl-3">
               <svg 
-                className="h-5 w-5 text-rose-500 group-hover:text-rose-600 transition-colors duration-200" 
+                className="h-5 w-5 text-purple-500 group-hover:text-purple-600 transition-colors duration-200" 
                 fill="none" 
                 stroke="currentColor" 
                 viewBox="0 0 24 24"

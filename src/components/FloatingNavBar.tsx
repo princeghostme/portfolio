@@ -65,7 +65,7 @@ export const TopNavBar = () => {
               <Link
                 key={index}
                 to={item.url}
-                className="text-gray-700 hover:text-rose-600 text-sm font-medium px-3 py-1 rounded-full transition-colors duration-200 flex items-center"
+                className="text-gray-700 hover:text-purple-600 text-sm font-medium px-3 py-1 rounded-full transition-colors duration-200 flex items-center"
               >
                 <span className="mr-2">{item.icon}</span>
                 {item.showText}
@@ -81,7 +81,7 @@ export const TopNavBar = () => {
               <Link
                 key={index}
                 to={item.url}
-                className="block text-gray-700 hover:text-rose-600 text-sm font-medium px-4 py-2 transition-colors duration-200 items-center"
+                className="block text-gray-700 hover:text-purple-600 text-sm font-medium px-4 py-2 transition-colors duration-200 items-center"
                 onClick={() => setShowMobileMenu(false)}
               >
                 <span className="mr-3 text-lg">{item.icon}</span>
@@ -98,7 +98,7 @@ export const TopNavBar = () => {
               <Link
                 key={index}
                 to={item.url}
-                className="text-gray-700 hover:text-rose-600 p-2 rounded-full transition-colors duration-200"
+                className="text-gray-700 hover:text-purple-600 p-2 rounded-full transition-colors duration-200"
                 title={item.showText}
               >
                 {item.icon}
@@ -116,14 +116,14 @@ export const TopNavBar = () => {
           <img
             src={user.imageUrl}
             alt="User"
-            className="w-8 h-8 rounded-xl border-2 border-gray-300 cursor-pointer hover:border-rose-500 transition duration-300"
+            className="w-8 h-8 rounded-xl border-2 border-gray-300 cursor-pointer hover:border-purple-500 transition duration-300"
           />
 
           {showUserDetails && (
-            <div className={`absolute ${isMobile ? 'right-0' : 'right-0'} top-10 mt-2 w-64 bg-rose-50 rounded-lg shadow-xl border border-gray-200 p-4 text-sm z-50`}>
+            <div className={`absolute ${isMobile ? 'right-0' : 'right-0'} top-10 mt-2 w-64 bg-purple-50 rounded-lg shadow-xl border border-gray-200 p-4 text-sm z-50`}>
               {/* Close Button */}
               <button
-                className="absolute top-2 right-2 text-gray-500 hover:text-rose-500 text-xs font-bold"
+                className="absolute top-2 right-2 text-gray-500 hover:text-purple-500 text-xs font-bold"
                 onClick={() => setShowUserDetails(false)}
                 title="Close"
               >
@@ -151,7 +151,7 @@ export const TopNavBar = () => {
                   href={user.resumeUrl}
                   download
                   title="Download Resume"
-                  className="text-gray-600 hover:text-rose-600 transition"
+                  className="text-gray-600 hover:text-purple-600 transition"
                 >
                   <FaDownload size={18} />
                 </a>

@@ -9,9 +9,9 @@ const InternshipsAndJobs = () => {
         {/* Page Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            My <span className="text-rose-600">Professional Journey</span>
+            My <span className="text-purple-600">Professional Journey</span>
           </h1>
-          <div className="w-24 h-1.5 bg-rose-500 mx-auto rounded-full mb-6"></div>
+          <div className="w-24 h-1.5 bg-purple-500 mx-auto rounded-full mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             A timeline of my career growth through internships and professional work experiences
           </p>
@@ -22,7 +22,7 @@ const InternshipsAndJobs = () => {
           <div className="inline-flex rounded-md shadow-sm">
             <a
               href="#work-experience"
-              className="inline-flex items-center px-6 py-3 text-sm font-medium rounded-l-lg bg-rose-600 text-white"
+              className="inline-flex items-center px-6 py-3 text-sm font-medium rounded-l-lg bg-purple-600 text-white"
             >
                 <FaBriefcase className="mr-2" />
               Work Experience
