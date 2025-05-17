@@ -1,6 +1,7 @@
 import { useState, useEffect, type JSX } from 'react';
 import { FaLinkedin, FaWhatsapp, FaDownload, FaHome, FaBriefcase, FaCode, FaProjectDiagram, FaAddressCard, FaBars } from 'react-icons/fa';
 import resume from '../assets/resume.pdf';
+import { Link } from 'react-router-dom';
 
 export interface NavItem {
   showText: string;
@@ -60,14 +61,14 @@ export const TopNavBar = () => {
         {!isMobile && (
           <div className="flex space-x-4">
             {navItems.map((item, index) => (
-              <a
+              <Link
                 key={index}
-                href={item.url}
+                to={item.url}
                 className="text-gray-700 hover:text-red-600 text-sm font-medium px-3 py-1 rounded-full transition-colors duration-200 flex items-center"
               >
                 <span className="mr-2">{item.icon}</span>
                 {item.showText}
-              </a>
+              </Link>
             ))}
           </div>
         )}
