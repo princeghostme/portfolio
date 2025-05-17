@@ -1,4 +1,4 @@
-import { HashRouter } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 import ContactMe from './components/ContactMe '
 import { TopNavBar } from './components/FloatingNavBar'
 import AppRouter from './routers/AppRouter'
@@ -6,11 +6,11 @@ import AppRouter from './routers/AppRouter'
 const App = () => {
   return (
     <>
-      <HashRouter>
+      <Router>
         <TopNavBar></TopNavBar>
         <AppRouter></AppRouter>
         <ContactMe></ContactMe>
-      </HashRouter>
+      </Router>
     </>
 
   )
