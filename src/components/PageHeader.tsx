@@ -1,4 +1,4 @@
-
+import resume from '../assets/resume.pdf';
 import GrowthStack from './GrowthStack';
 
 const PageHeader = () => {
@@ -20,9 +20,16 @@ const PageHeader = () => {
 
                 {/* Timeline Component */}
                 <GrowthStack />
+
+                <a
+                    href={resume}
+                    className='inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-xl shadow-sm text-red-600 bg-white bg-opacity-75 hover:bg-red-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-all'
+                >
+                    Download Resume
+                </a>
             </div>
 
-            
+
         </header>
     );
 };
