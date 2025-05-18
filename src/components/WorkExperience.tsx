@@ -10,7 +10,7 @@ const WorkExperience = () => {
                 "Contributed to AaNeelCare modules like EMR export, and patient portals used by hospitals across the U.S.",
                 "Built and maintained .NET Core and Express.js APIs for electronic medical records and data synchronization",
                 "Developed and optimized React-based front-end interfaces ensuring responsiveness and HIPAA compliance",
-                "Implemented secure integrations using Amazon S3, SQL Server, and MongoDB for health data storage and retrieval",
+                "Implemented secure integrations using Azure, Azure Blob Storage, Azure Table Storage, SSMS, and Cosmos DB for health data storage and retrieval",
                 "Enhanced system performance and maintainability through refactoring, code reviews, and CI/CD practices",
                 "Ensured compliance with healthcare standards such as CMS, HIPAA while working with protected health data"
             ],
@@ -22,7 +22,7 @@ const WorkExperience = () => {
                 // "Disease Search with IMO data by US government",
                 // "Appointment scheduler",
             ],
-            technologies: ["React",".NET Core Apis","Express Apis","Azure","SQL Server","CosmosDb","Performance Optimization","Version Control"]
+            technologies: ["React",".NET Core Apis","Express Apis","Azure","SQL","CosmosDb","Performance Optimization","Version Control"]
         },
         {
             company: "MITS Global",

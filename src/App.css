@@ -1,0 +1,7 @@
+
+
+input:focus-visible, input:focus, input:active , input:focus-within , input:focus-within-visible {
+  box-shadow: 0 0 0 2px theme('colors.teal.500');
+  outline: 0 0 0 2px theme('colors.teal.500');
+  border-color: theme('colors.teal.500');
+}
