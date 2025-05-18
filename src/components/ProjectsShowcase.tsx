@@ -317,7 +317,7 @@ export const ProjectsShowcase: React.FC = () => {
 
 export const ProjectsShowcaseLarge: React.FC = () => {
   return (
-    <div className="w-full py-10">
+    <div className="w-full py-10 mt-5">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 mt-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
