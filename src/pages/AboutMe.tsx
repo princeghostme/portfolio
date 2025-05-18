@@ -1,4 +1,5 @@
 import React from "react";
+import EducationTimeline from "../components/EducationTimeline";
 
 const AboutMe: React.FC = () => {
   return (
@@ -61,6 +62,8 @@ const AboutMe: React.FC = () => {
             Successfully collaborated with diverse clients to design and implement web solutions. Known for effectively reducing project timelines while upholding high-quality standards and fostering team collaboration.
           </p>
         </div>
+
+        <EducationTimeline />
 
       </div>
     </div>

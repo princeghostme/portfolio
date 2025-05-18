@@ -180,7 +180,7 @@ const items: ProjectDetail[] = [
 
 const ProjectCard: React.FC<{ project: ProjectDetail }> = ({ project }) => {
   return (
-    <div className="group relative bg-white rounded-lg shadow-md border border-gray-200 hover:bg-teal-50 transition-all duration-300 p-5 w-fit m-5 mx-2">
+    <div className="group relative bg-white rounded-lg shadow-md border border-gray-200 hover:bg-teal-50 transition-all duration-300 p-5 lg:w-fit sm:w-full m-5 mx-2">
       <h3 className="text-base font-semibold text-gray-800 group-hover:text-teal-700 mb-1">
         {project.name}
       </h3>
@@ -302,7 +302,7 @@ export const ProjectsShowcase: React.FC = () => {
             A collection of my professional work showcasing full-stack development expertise with Angular and .NET Core
           </p>
         </div>
-        <div className="flex flex-wrap justify-evenly">
+        <div className="sm:grid sm:grid-cols-1 lg:flex lg:flex-wrap justify-evenly">
           {items.map((item) => (
             <ProjectCard key={item.id} project={item} />
           ))}

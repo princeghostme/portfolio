@@ -95,20 +95,61 @@ const technologies = [
 ];
 
 const additionalSkills = [
+  // Software Development Practices
   "Agile Methodologies",
-  "Database Design",
-  "Performance Optimization",
+  "Scrum & Sprint Planning",
   "Code Review",
   "Technical Documentation",
-  "Server Side Rendering (SSR)",
-  "Client Side Rendering (CSR)",
-  "Power Automate",
-  "CAML Query",
+  "Clean Architecture",
+  "Design Patterns (SOLID, Repository, CQRS)",
+  "Test-Driven Development (TDD)",
+  "Dependency Injection",
+  "Version Control (Git, Bitbucket)",
+
+  // System Design & Architecture
   "Microservices Architecture",
   "Event-Driven Architecture",
-  "Clean Architecture",
-  "Chunked Data Transfer"
+  "Domain-Driven Design (DDD)",
+  "API Gateway Pattern",
+  "Authentication & Authorization (JWT, OAuth2)",
+  "Rate Limiting & Throttling",
+  "Caching Strategies (Redis, Memory Cache)",
+
+  // Database & Data Flow
+  "Database Design",
+  "Performance Optimization",
+  "Query Optimization",
+  "Chunked Data Transfer",
+  "CAML Query",
+  "ETL Pipelines",
+  "Data Migration",
+
+  // Frontend/Rendering Strategies
+  "Server Side Rendering (SSR)",
+  "Client Side Rendering (CSR)",
+  "Component-Based UI Architecture",
+
+  // DevOps & Cloud
+  "CI/CD Pipelines",
+  "Azure DevOps",
+  "Docker & Containerization",
+  "Infrastructure as Code (IaC)",
+  "Monitoring & Logging (App Insights, Log Analytics)",
+
+  // Microsoft & Integration Tools
+  "Power Automate",
+  "SharePoint Workflow",
+  "Timer Jobs",
+  "Integration with 3rd-party APIs (Razorpay, ClickHouse, etc.)",
+
+  // Project/Team Management
+  "Task Estimation & Prioritization",
+  "Mentoring Junior Developers",
+  "Client Communication & Demos",
+  "Technical Leadership in Cross-functional Teams",
+  "Requirements Gathering & Analysis"
 ];
+
 
 const TechnologiesDetails = () => {
   const [searchTerm, setSearchTerm] = useState('');

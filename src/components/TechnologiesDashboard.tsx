@@ -55,7 +55,7 @@ const TechnologiesDashboard = () => {
                 {skills.map((skill, index) => (
                     <div
                         key={index}
-                        className="bg-teal-50 rounded-xl p-2 px-5 my-2 mx-5 shadow-sm hover:shadow-md transition"
+                        className="bg-teal-50 rounded-xl p-2 px-5 my-2 mx-5 sm:my-1 sm:mx-2  shadow-sm hover:shadow-md transition"
                     >
                         <h2 className="text-sm font-semibold text-teal-800 text-center">
                             {skill.name}

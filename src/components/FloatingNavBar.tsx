@@ -61,7 +61,7 @@ export const TopNavBar = () => {
           <>
             <button
               onClick={() => setShowMobileMenu(!showMobileMenu)}
-              className="text-gray-700 p-2 rounded-full hover:bg-gray-100 transition-colors"
+              className="text-gray-700 p-2 rounded-full hover:bg-gray-100 transition-all duration-800"
               aria-label="Toggle menu"
             >
               <FaBars size={20} />
@@ -71,7 +71,7 @@ export const TopNavBar = () => {
               <Link
                 key={index}
                 to={item.url}
-                className={`flex items-center text-gray-700 text-base font-medium px-2 py-2.5 transition-colors duration-200
+                className={`flex items-center text-gray-700 text-base font-medium px-2 py-2.5
                   ${location.pathname === item.url ? 'text-teal-600 bg-gray-50//90 rounded-lg' : 'hover:bg-teal-600 hover:text-white rounded-lg'}`}
               >
                 <span className="text-lg">{item.icon}</span>
@@ -101,7 +101,7 @@ export const TopNavBar = () => {
 
         {/* Mobile Menu Drawer */}
         {isMobile && showMobileMenu && (
-          <div className="absolute top-12 left-0 w-full bg-white/95 backdrop-blur-lg rounded-xl shadow-xl py-3 z-50 border border-gray-100">
+          <div className="absolute top-15 left-0 w-full bg-white/80 rounded-2xl transition-all duration-800 backdrop-blur-lg shadow-xl py-3 z-50 border border-gray-100">
             {navItems.map((item, index) => (
               <Link
                 key={index}
@@ -133,7 +133,7 @@ export const TopNavBar = () => {
             </button>
 
             <div
-              className={`absolute right-0 top-0 w-75 bg-white rounded-lg shadow-xl overflow-hidden transition-all duration-800
+              className={`absolute right-0 top-0 w-80 bg-white rounded-lg shadow-xl overflow-hidden transition-all duration-800
                 ${showUserDetails ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}
               onMouseLeave={() => !isMobile && setShowUserDetails(false)}
             >
