@@ -1,9 +1,33 @@
 const WorkExperience = () => {
     const experiences = [
         {
+            company: "AaNeel Infotech",
+            position: "Full Stack Developer (Senior)",
+            duration: "Apr 2025 – Present",
+            location: "Bangalore",
+            responsibilities: [
+                "Collaborated with cross-functional teams to develop and deploy scalable healthcare and insurance software solutions for U.S.-based hospitals and providers",
+                "Contributed to AaNeelCare modules like EMR export, and patient portals used by hospitals across the U.S.",
+                "Built and maintained .NET Core and Express.js APIs for electronic medical records and data synchronization",
+                "Developed and optimized React-based front-end interfaces ensuring responsiveness and HIPAA compliance",
+                "Implemented secure integrations using Amazon S3, SQL Server, and MongoDB for health data storage and retrieval",
+                "Enhanced system performance and maintainability through refactoring, code reviews, and CI/CD practices",
+                "Ensured compliance with healthcare standards such as CMS, HIPAA while working with protected health data"
+            ],
+            features: [
+                "EMR(Electronic Medical Records) export",
+                "Clinical Document/Progress Note system",
+                // "Patient portal enhancements",
+                // "Insurance claim tracker",
+                // "Disease Search with IMO data by US government",
+                // "Appointment scheduler",
+            ],
+            technologies: ["React",".NET Core Apis","Express Apis","Azure","SQL Server","CosmosDb","Performance Optimization","Version Control"]
+        },
+        {
             company: "MITS Global",
-            position: "Senior Software Developer & Assistant Lead",
-            duration: "Dec 2023 – Present",
+            position: "Full Stack Developer (Senior & Team Lead)",
+            duration: "Dec 2023 – March 2025",
             location: "Bangalore",
             responsibilities: [
                 "Collaborated with Nuvama, a leading fintech client, to design and implement scalable and efficient software solutions",
@@ -14,7 +38,19 @@ const WorkExperience = () => {
                 "Optimized various services including login functionalities and API wrappers while restructuring code for improved maintainability",
                 "Implemented best practices in software development including version control, automated testing, and code reviews"
             ],
-            technologies: ["React", ".NET Core", "REST APIs", "Azure", "SQL Server", "Performance Optimization"]
+            features: [
+                "Optimized performance (Nuvama)",
+                "Live fixes (Nuvama)",
+                "Mutual fund module (Nuvama)",
+                "Client investment tracking (Nuvama)",
+                "Transaction audit (Nuvama)",
+                "Order routing (Nuvama)",
+                "KYC integration (Nuvama)",
+                "Wealth dashboard (Nuvama)",
+                "Real-time updates (Nuvama)",
+            ],
+
+            technologies: ["React", ".NET Core Apis", "Express Apis", "Web/REST APIs", "Amazon S3", "SQL Server","PostgreSQL", "MongoDB", "Performance Optimization", "Version Control"]
         },
         {
             company: "Enaviya Information Technology",
@@ -30,7 +66,17 @@ const WorkExperience = () => {
                 "Optimized existing applications for improved performance and maintainability",
                 "Engaged in code reviews, version control, and testing to uphold quality standards"
             ],
-            technologies: [".NET Core", "Angular", "TypeScript", "SharePoint", "SQL Server", "Azure"]
+            features: [
+                "Rental app (SIS India)",
+                "Banking app (AUB Bank)",
+                "Auction Management System(Inhouse product)",
+                "SharePoint workflows (Ashirvad, Marico India)",
+                "Performance boost (Qatar Airways,SIS India)",
+                "Angular/React UIs setup (Vedanta,SIS India)",
+                'CRM and ERP modules (Vedanta, SIS India,Ashirvad,Hindustan Zinc)',
+
+            ],
+            technologies: [".NET Core", "Angular", "React","SharePoint","PostgreSQL", "SQL","CosmosDb","Azure","Azure Table Storage","Key Vaults","Power platform","Azure Blob Storage"]
         },
         {
             company: "AddInnovation",
@@ -43,6 +89,12 @@ const WorkExperience = () => {
                 "Designed intuitive UI interfaces focusing on user experience and accessibility",
                 "Collaborated with cross-functional teams to gather requirements and implement features",
                 "Improved system reliability and user satisfaction through iterative development"
+            ],
+            features: [
+                "Image processor",
+                "Backup system",
+                "Windows UI",
+                "AI-based module"
             ],
             technologies: [".NET", "PostgreSQL", "Windows Forms", "AI/ML", "Image Processing"]
         }
@@ -66,9 +118,7 @@ const WorkExperience = () => {
                 <div className="space-y-12">
                     {experiences.map((exp, index) => (
                         <div key={index} className="relative group">
-
-                            {/* Content */}
-                            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-red-50">
+                            <div className="bg-white p-5 rounded-xl shadow-lg hover:shadow-xl transition duration-300 ">
                                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
                                     <h3 className="text-xl font-bold text-red-800">{exp.position}</h3>
                                     <div className="flex items-center mt-1 sm:mt-0">
@@ -80,16 +130,32 @@ const WorkExperience = () => {
                                 <h4 className="text-lg font-semibold text-red-700 mt-1">{exp.company}</h4>
                                 <p className="text-sm text-red-500 mb-4">{exp.location}</p>
 
-                                <ul className="space-y-2 mt-4">
-                                    {exp.responsibilities.map((item, i) => (
-                                        <li key={i} className="flex items-start">
-                                            <div className="flex-shrink-0 mt-1.5">
-                                                <div className="w-2 h-2 bg-red-400 rounded-full"></div>
-                                            </div>
-                                            <p className="ml-2 text-gray-700">{item}</p>
-                                        </li>
-                                    ))}
-                                </ul>
+                                {/* Split Section */}
+                                <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mt-4">
+                                    <div className="md:col-span-4">
+                                        <h5 className="text-red-600 font-semibold mb-2">Responsibilities</h5>
+                                        <ul className="space-y-2">
+                                            {exp.responsibilities.map((item, i) => (
+                                                <li key={i} className="flex items-start">
+                                                    <div className="flex-shrink-0 mt-1.5">
+                                                        <div className="w-2 h-2 bg-red-400 rounded-full"></div>
+                                                    </div>
+                                                    <p className="ml-2 text-gray-700">{item}</p>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                    <div className="md:col-span-1">
+                                        <h5 className="text-red-600 font-semibold mb-2">USPs/Features</h5>
+                                        <ul className="space-y-1">
+                                            {exp.features.map((item, i) => (
+                                                <li key={i} className="text-gray-700 text-sm bg-red-50 px-2 py-1 rounded-md">
+                                                    {item}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
 
                                 <div className="mt-6 pt-4 border-t border-red-100">
                                     <div className="flex flex-wrap gap-2">

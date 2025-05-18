@@ -30,23 +30,9 @@ const InternshipsAndJobs = () => {
 
   return (
     <div className="relative min-h-screen py-12 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto mt-10">
-        {/* Page Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            My <span className="text-red-600">Professional Journey</span>
-          </h1>
-          <div className="w-24 h-1.5 bg-red-500 mx-auto rounded-full mb-6" />
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-            A timeline of my career growth through internships and professional work experiences.
-          </p>
-        </div>
-
-        {/* Main Content */}
-        <div className="transition-all duration-300 ease-in-out">
+      <div className="transition-all duration-300 ease-in-out">
           {renderContent()}
         </div>
-      </div>
 
       {/* Floating Pill-Style Toggle Tabs */}
       <div className="
