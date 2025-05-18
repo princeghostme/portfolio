@@ -24,6 +24,7 @@
     "react-pdf": "^9.2.1",
     "react-router-dom": "^7.6.0",
     "react-skyux": "^9.2.0",
+    "sitemap-generator-cli": "^7.5.0",
     "skyux": "^5.0.1"
   },
   "devDependencies": {
