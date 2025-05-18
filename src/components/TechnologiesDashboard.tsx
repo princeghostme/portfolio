@@ -41,8 +41,8 @@ const renderStars = (rating : number) => {
 
 const TechnologiesDashboard = () => {
     return (
-        <div className="mb-5 bg-white py-12 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto text-center mb-12">
+        <div className="mb-1 bg-white py-1 px-4 sm:px-6 lg:px-8">
+            <div className=" mx-auto text-center">
                 <h1 className="text-3xl md:text-4xl font-bold text-teal-900 mb-2">
                     My <span className="text-teal-600">Core Skills</span>
                 </h1>

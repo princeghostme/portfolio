@@ -2,8 +2,8 @@ import React from "react";
 
 const AISkillsDashboardSection: React.FC = () => {
     return (
-        <div className="py-8 px-4 sm:px-6 lg:px-8 bg-white">
-            <div className="max-w-5xl mx-auto text-center">
+        <div className="py-5 sm:px-6 lg:px-8">
+            <div className="mx-auto text-center">
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                     AI for <span className="text-teal-600">Productivity</span>
                 </h2>
