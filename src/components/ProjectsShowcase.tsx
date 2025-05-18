@@ -291,8 +291,8 @@ const ProjectDetails: React.FC<{ project: ProjectDetail }> = ({ project }) => {
 
 export const ProjectsShowcase: React.FC = () => {
   return (
-    <div className="w-full py-1">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="w-full py-16">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             My <span className="text-teal-600">Project Portfolio</span>
@@ -314,8 +314,8 @@ export const ProjectsShowcase: React.FC = () => {
 
 export const ProjectsShowcaseLarge: React.FC = () => {
   return (
-    <div className="w-full py-5 mt-15">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="w-full py-10 mt-5">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 mt-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Project <span className="text-teal-600">Details</span>

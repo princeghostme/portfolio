@@ -25,7 +25,7 @@ const educationData: EducationEntry[] = [
       "Developed a Document Management System using .NET Core and Angular.",
       "Built a Leave Management System integrated with Azure SQL and Blob Storage."
     ],
-    technologies: ["ASP.NET Core", "c#", "DSA", "Cloud Computing", "Angular", "SQL", "Azure", "Git"],
+    technologies: ["ASP.NET Core", "Angular", "SQL Server", "Azure", "Git"],
     extracurriculars: [
       "Represented university in inter-college tech fest.",
       "Volunteered as technical coordinator in MCA Department Club."
@@ -54,7 +54,7 @@ const educationData: EducationEntry[] = [
     duration: "Apr 2015 – Jun 2016",
     degree: "Higher Secondary Education (Class XII, PCM)",
     university: "Army Public School, CBSE Board",
-    gpa: "Percentage: 66%",
+    gpa: "Percentage: 86%",
     highlights: [
       "Completed with Physics, Chemistry, and Mathematics as core subjects.",
       "Excelled in Computer Science elective with programming assignments in C++."
