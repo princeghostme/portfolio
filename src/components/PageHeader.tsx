@@ -5,7 +5,7 @@ const PageHeader = () => {
 
     return (
         <header className="relative text-red-700 py-16 md:py-24 bg-gradient-to-t to-red-300 from-white overflow-hidden">
-            <div className="container mx-auto px-4 flex flex-col items-center z-10 relative">
+            <div className="container mx-auto px-4 flex flex-col items-center z-10 relative mt-10">
                 {/* Heading */}
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-center">
                     <span className="bg-clip-text text-transparent bg-red-700">

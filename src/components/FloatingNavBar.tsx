@@ -62,6 +62,7 @@ export const TopNavBar = () => {
       <div className="bg-white/80 backdrop-blur-lg shadow-lg rounded-xl px-4 py-2 flex justify-between items-center border border-gray-200">
         {/* Mobile menu button */}
         {isMobile && (
+          <>
           <button
             onClick={() => setShowMobileMenu(!showMobileMenu)}
             className="text-gray-700 p-2 rounded-full hover:bg-gray-100 transition-colors"
@@ -69,6 +70,17 @@ export const TopNavBar = () => {
           >
             <FaBars size={20} />
           </button>
+
+           {!showMobileMenu && navItems.map((item, index) => (
+              <Link
+                key={index}
+                to={item.url}
+                className="flex items-center text-gray-700 hover:bg-red-600 text-base font-medium px-2 py-2.5 transition-colors duration-200"
+              >
+                <span className="text-lg">{item.icon}</span>
+              </Link>
+            ))}
+          </>
         )}
 
         {/* Default navigation items (unchanged size) */}
@@ -90,6 +102,7 @@ export const TopNavBar = () => {
         {/* Mobile menu */}
         {isMobile && showMobileMenu && (
           <div className="absolute top-12 left-0 w-full bg-white/95 backdrop-blur-lg rounded-xl shadow-xl py-3 z-50 border border-gray-100">
+           
             {navItems.map((item, index) => (
               <Link
                 key={index}
@@ -101,6 +114,7 @@ export const TopNavBar = () => {
                 {item.showText}
               </Link>
             ))}
+            
           </div>
         )}
 

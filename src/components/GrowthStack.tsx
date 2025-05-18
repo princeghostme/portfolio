@@ -7,29 +7,11 @@ interface GrowthData {
 
 const GrowthStack = () => {
   const growthData: GrowthData[] = [
-    {
-      year: "2017-18",
-      title: "UI/UX Foundations",
-      company: "PIALGO Solutions",
-      duration: "Oct 2017 - Jul 2018",
-    },
-    {
-      year: "2020",
-      title: "Full Stack & Research",
-      company: "Lithoera Technology",
-      duration: "Feb 2020 - Jul 2020",
-    },
-    {
-      year: "2021",
+     {
+      year: "2025",
       title: "Enterprise Systems",
-      company: "Hindalco",
-      duration: "Feb 2021 - Jul 2021",
-    },
-    {
-      year: "2022",
-      title: "Enterprise Systems",
-      company: "Enaviya IT",
-      duration: "Feb 2022 - Dec 2023",
+      company: "Aaneel Infotech",
+      duration: "Mar 2025 - Present",
     },
     {
       year: "2023",
@@ -38,10 +20,34 @@ const GrowthStack = () => {
       duration: "Dec 2022 - Mar 2025",
     },
     {
-      year: "2025",
+      year: "2022",
       title: "Enterprise Systems",
-      company: "Aaneel Infotech",
-      duration: "Mar 2025 - Present",
+      company: "Enaviya IT",
+      duration: "Feb 2022 - Dec 2023",
+    },
+    {
+      year: "2021",
+      title: "Developer",
+      company: "Add Innovation",
+      duration: "Aug 2021 - Dec 2021",
+    },
+    {
+      year: "2021",
+      title: "Enterprise Systems",
+      company: "Hindalco",
+      duration: "Feb 2021 - Jul 2021",
+    },
+    {
+      year: "2020",
+      title: "Full Stack & Research",
+      company: "Lithoera Technology",
+      duration: "Feb 2020 - Jul 2020",
+    },
+    {
+      year: "2017-18",
+      title: "UI/UX Foundations",
+      company: "PIALGO Solutions",
+      duration: "Oct 2017 - Jul 2018",
     },
   ];
 
@@ -65,7 +71,7 @@ const GrowthStack = () => {
             <div
               key={`progress-${index}`}
               className="absolute h-3 bg-red-500 rounded-full transition-all duration-700 ease-in-out"
-              style={{ width, left: "85%" }}
+              style={{ width, left: "-5%" }}
             ></div>
           );
         })}
@@ -98,8 +104,8 @@ const GrowthStack = () => {
       </div>
 
       {/* Experience Cards */}
-      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center">
-        {[...growthData].reverse().map((item, index) => (
+      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 justify-items-center">
+        {[...growthData].map((item, index) => (
           <div
             key={`detail-${index}`}
             className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition w-full max-w-xs"
