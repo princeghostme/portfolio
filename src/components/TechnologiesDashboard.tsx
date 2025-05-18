@@ -1,56 +1,77 @@
 import { Link } from "react-router-dom";
+import { Star, StarHalf, StarOff } from "lucide-react";
+
+const skills = [
+    { name: "ASP.NET Core", rating: 5 },
+    { name: "REST & Web API", rating: 5 },
+    { name: "Entity Framework", rating: 4.5 },
+    { name: "React", rating: 4 },
+    { name: "Angular", rating: 3.5 },
+    { name: "JavaScript/TypeScript", rating: 4 },
+    { name: "SQL Server", rating: 4.5 },
+    { name: "PostgreSQL", rating: 3.5 },
+    { name: "Azure Functions", rating: 4 },
+    { name: "Azure DevOps", rating: 4 },
+    { name: "Blob Storage", rating: 4 },
+    { name: "Docker", rating: 3.5 },
+    { name: "Cosmos DB", rating: 3 },
+    { name: "Redis Caching", rating: 3.5 },
+    { name: "Microservices Architecture", rating: 4 },
+    { name: "CI/CD Pipelines", rating: 4 },
+    { name: "SignalR/WebSockets", rating: 3.5 },
+    { name: "Authentication (JWT/OAuth)", rating: 4 },
+    { name: "Power Automate / SharePoint", rating: 4 },
+    { name: "Dapper ORM", rating: 3.5 },
+];
+
+
+const renderStars = (rating : number) => {
+    const stars = [];
+    for (let i = 1; i <= 5; i++) {
+        if (rating >= i) {
+            stars.push(<Star key={i} className="w-3 h-3 text-yellow-500 fill-yellow-500" />);
+        } else if (rating >= i - 0.5) {
+            stars.push(<StarHalf key={i} className="w-3 h-3 text-yellow-500 fill-yellow-500" />);
+        } else {
+            stars.push(<StarOff key={i} className="w-3 h-3 text-gray-300" />);
+        }
+    }
+    return stars;
+};
 
 const TechnologiesDashboard = () => {
-    const categories = [
-        { name: "Languages", count: 6 },
-        { name: "Frameworks", count: 7 },
-        { name: "Backend Technologies", count: 6 },
-        { name: "Databases", count: 7 },
-        { name: "Cloud & DevOps", count: 7 },
-        { name: "Tools & Platforms", count: 8 },
-        { name: "API Performance", count: 6 },
-        { name: "UI/UX", count: 4 }
-    ];
-
     return (
-        <div className="min-h-screen bg-white py-16 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
-                <div className="text-center mb-16">
-                    <h1 className="text-4xl md:text-5xl font-bold text-red-900 mb-4">
-                        My <span className="text-red-600">Technical Stack</span>
-                    </h1>
-                    <div className="w-24 h-1.5 bg-red-500 mx-auto rounded-full mb-6"></div>
-                    <p className="text-xl text-red-700 max-w-3xl mx-auto">
-                        Overview of my technical expertise across different domains.
-                    </p>
-                </div>
+        <div className="mb-5 bg-white py-12 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto text-center mb-12">
+                <h1 className="text-3xl md:text-4xl font-bold text-teal-900 mb-2">
+                    My <span className="text-teal-600">Core Skills</span>
+                </h1>
+                <p className="text-teal-700 text-base md:text-lg">
+                    Here's a quick overview of my most proficient technologies.
+                </p>
+            </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {categories.map((category, index) => (
-                        <div 
-                            key={index}
-                            className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300 border border-red-50 hover:border-red-100"
-                        >
-                            <h2 className="text-xl font-semibold text-red-800 mb-2">{category.name}</h2>
-                            <p className="text-red-600">{category.count} skills</p>
-                            <div className="mt-4 w-full bg-red-50 rounded-full h-2.5">
-                                <div 
-                                    className="bg-red-500 h-2.5 rounded-full" 
-                                    style={{ width: `${Math.min(100, category.count * 10)}%` }}
-                                ></div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-                <div className="mt-16 text-center">
-                    <Link 
-                        to="/skills" 
-                        className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors"
+            <div className="flex flex-wrap justify-evenly gap-4 max-w-7xl mx-auto">
+                {skills.map((skill, index) => (
+                    <div
+                        key={index}
+                        className="bg-teal-50 rounded-xl p-2 px-5 my-2 mx-5 shadow-sm hover:shadow-md transition"
                     >
-                        View Full Technical Breakdown
-                    </Link>
-                </div>
+                        <h2 className="text-sm font-semibold text-teal-800 text-center">
+                            {skill.name}
+                        </h2>
+                        <div className="flex justify-center">{renderStars(skill.rating)}</div>
+                    </div>
+                ))}
+            </div>
+
+            <div className="mt-12 text-center">
+                <Link
+                    to="/skills"
+                    className="inline-block px-6 py-2 text-white bg-teal-600 rounded-full hover:bg-teal-700 text-sm font-medium transition"
+                >
+                    View Full Skillset
+                </Link>
             </div>
         </div>
     );

@@ -180,41 +180,38 @@ const items: ProjectDetail[] = [
 
 const ProjectCard: React.FC<{ project: ProjectDetail }> = ({ project }) => {
   return (
-    <div className="group relative bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-red-300 cursor-pointer h-full">
-      <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      <div className="relative p-6 h-full flex flex-col">
-        <div className="flex-grow">
-          <div className="flex items-center mb-4">
-            <h3 className="text-xl font-bold text-gray-800 group-hover:text-red-700 transition-colors duration-300">
-              {project.name}
-            </h3>
-          </div>
-          <p className="text-red-500 text-sm font-medium mb-3">{project.duration}</p>
-          {project.role && (
-            <p className="text-gray-600 text-sm bg-gray-50 inline-block px-2 py-1 rounded-md">
-              {project.role}
-            </p>
-          )}
+    <div className="group relative bg-white rounded-lg shadow-md border border-gray-200 hover:border-teal-400 transition-all duration-300 p-4 w-fit max-w-sm">
+      <h3 className="text-base font-semibold text-gray-800 group-hover:text-teal-700 mb-1">
+        {project.name}
+      </h3>
+
+      <div className="text-xs text-teal-600 font-medium mb-1">
+        {project.duration}
+      </div>
+
+      {project.role && (
+        <div className="text-xs text-gray-600 bg-gray-100 rounded px-2 py-0.5 inline-block mb-2">
+          Role: {project.role}
         </div>
-        <div className="mt-4 pt-4 border-t border-gray-100 group-hover:border-red-100 transition-colors duration-300">
-          <div className="flex flex-wrap gap-1">
-            {project.technologies?.slice(0, 3).map((tech, index) => (
-              <span 
-                key={index} 
-                className="bg-red-50 text-red-700 text-xs px-2 py-1 rounded-md group-hover:bg-red-100 transition-colors duration-300"
-              >
-                {tech}
-              </span>
-            ))}
-            {project.technologies && project.technologies.length > 3 && (
-              <span className="text-xs text-gray-500">+{project.technologies.length - 3} more</span>
-            )}
-          </div>
-        </div>
+      )}
+
+      <div className="flex flex-wrap gap-1 mt-1">
+        {project.technologies?.slice(0, 4).map((tech, idx) => (
+          <span
+            key={idx}
+            className="bg-teal-50 text-teal-700 text-[11px] px-2 py-0.5 rounded-md group-hover:bg-teal-100 transition-colors"
+          >
+            {tech}
+          </span>
+        ))}
+        {project.technologies && project.technologies.length > 4 && (
+          <span className="text-[11px] text-gray-500">+{project.technologies.length - 4} more</span>
+        )}
       </div>
     </div>
   );
 };
+
 
 const ProjectDetails: React.FC<{ project: ProjectDetail }> = ({ project }) => {
   return (
@@ -223,10 +220,10 @@ const ProjectDetails: React.FC<{ project: ProjectDetail }> = ({ project }) => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div>
             <h2 className="text-3xl font-bold text-gray-900 mb-1">{project.name}</h2>
-            <p className="text-red-600 font-medium">{project.duration}</p>
+            <p className="text-teal-600 font-medium">{project.duration}</p>
           </div>
           {project.role && (
-            <span className="bg-red-100 text-red-800 text-sm px-4 py-2 rounded-full font-medium">
+            <span className="bg-teal-100 text-teal-800 text-sm px-4 py-2 rounded-full font-medium">
               {project.role}
             </span>
           )}
@@ -250,7 +247,7 @@ const ProjectDetails: React.FC<{ project: ProjectDetail }> = ({ project }) => {
               {project.technologies.map((tech, index) => (
                 <span 
                   key={index} 
-                  className="bg-gradient-to-br from-red-50 to-red-100 text-red-800 text-sm px-4 py-2 rounded-lg shadow-sm border border-red-100"
+                  className="bg-gradient-to-br from-teal-50 to-teal-100 text-teal-800 text-sm px-4 py-2 rounded-lg shadow-sm border border-teal-100"
                 >
                   {tech}
                 </span>
@@ -268,7 +265,7 @@ const ProjectDetails: React.FC<{ project: ProjectDetail }> = ({ project }) => {
               <li key={index} className="flex items-start">
                 <span className="flex-shrink-0 mt-1 mr-3">
                   <svg 
-                    className="w-5 h-5 text-red-500" 
+                    className="w-5 h-5 text-teal-500" 
                     fill="none" 
                     stroke="currentColor" 
                     viewBox="0 0 24 24" 
@@ -298,9 +295,9 @@ export const ProjectsShowcase: React.FC = () => {
       <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            My <span className="text-red-600">Project Portfolio</span>
+            My <span className="text-teal-600">Project Portfolio</span>
           </h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-red-400 to-red-600 mx-auto rounded-full mb-6"></div>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-teal-400 to-teal-600 mx-auto rounded-full mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             A collection of my professional work showcasing full-stack development expertise with Angular and .NET Core
           </p>
@@ -321,9 +318,9 @@ export const ProjectsShowcaseLarge: React.FC = () => {
       <div className="mx-auto px-4 sm:px-6 lg:px-8 mt-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Project <span className="text-red-600">Details</span>
+            Project <span className="text-teal-600">Details</span>
           </h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-red-400 to-red-600 mx-auto rounded-full mb-6"></div>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-teal-400 to-teal-600 mx-auto rounded-full mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Detailed view of my professional projects with technologies used and key contributions
           </p>
