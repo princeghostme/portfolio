@@ -35,7 +35,7 @@ const PageHeader = () => {
                     <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-200 animate-tilt"></div>
                     <a
                         href={resume}
-                        download="YourName_Resume.pdf"
+                        download="Prince_Resume.pdf"
                         className="relative flex items-center px-8 py-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                     >
                         <span className="text-lg font-semibold text-purple-900 group-hover:text-purple-700 transition-colors">

@@ -189,11 +189,11 @@ const items: ProjectDetail[] = [
   },
   {
     id: 9,
-    name: "Hospital Project UI (AIMS Ranchi)",
+    name: "Hospital Management System",
     description:
       "Patient management system interface for multi-specialty hospital with focus on accessibility and clinician workflow.",
     technologies: ["React", ".Net 6", "SSMS"],
-    role: "UI/UX Designer",
+    role: "UI/UX Designer, java, SQL",
     feature: [
       "Designed patient registration flow reducing time by 35%",
       "Created clinician dashboard prioritizing critical information",
