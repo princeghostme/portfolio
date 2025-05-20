@@ -1,20 +1,62 @@
+import type React from "react"
+
+import { useState, useEffect, useRef, createRef } from "react"
 
 interface ProjectDetail {
-  id: number;
-  name: string;
-  description?: string;
-  technologies?: string[];
-  feature: string[];
-  duration: string;
-  role?: string;
+  id: number
+  name: string
+  description?: string
+  technologies?: string[]
+  feature: string[]
+  duration: string
+  role?: string
+  startDate: Date
+}
+
+// Parse duration string into Date object for sorting
+const parseDate = (dateStr: string): Date => {
+  const dateRange = dateStr.split("–").map((d) => d.trim())
+  const [startMonth, startYear] = dateRange[0].split(" ")
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+  const monthIndex = months.indexOf(startMonth)
+  const yearNum = Number.parseInt(startYear || new Date().getFullYear().toString())
+  return new Date(yearNum, monthIndex)
 }
 
 const items: ProjectDetail[] = [
   {
     id: 1,
+    name: "Fintech Trading and Investment Platform",
+    description:
+      "A robust trading and investment platform for Nuvama (formerly Edelweiss), providing real-time market data, portfolio management, and transaction tracking for retail and institutional investors.",
+    technologies: ["React", ".NET Core 6, 8", "Mongo", "SQL", "Entity Framework Core", "Redis", "python"],
+    role: "Full-stack Developer",
+    feature: [
+      "Implemented real-time market data updates using SignalR and Azure Service Bus",
+      "Built secure transaction modules for equity, commodity, and derivatives trading",
+      "Integrated Azure SQL with high-frequency data writes and optimized query performance",
+      "Created dashboards for tracking portfolio performance and order histories",
+      "Implemented advanced order types and stop-loss logic",
+      "Built notification services for order confirmations and trade alerts via MS Graph API",
+      "Ensured secure user access with Azure AD and JWT-based authentication",
+      "Collaborated on API design and versioning for mobile and web platforms",
+    ],
+    duration: "Dec 2023 – Mar 2025",
+    startDate: parseDate("Dec 2023"),
+  },
+  {
+    id: 2,
     name: "Lease and Rent System",
-    description: "A comprehensive system for property management companies to handle lease agreements and rent collection with automated workflows and integrations with Microsoft 365 services.",
-    technologies: [ ".NET Core 6 with MVC", "Azure SQL", "Power Automate", "SharePoint", "Entity Framework Core", "Azure App Services"],
+    description:
+      "A comprehensive system for property management companies to handle lease agreements and rent collection with automated workflows and integrations with Microsoft 365 services.",
+    technologies: [
+      ".NET Core 6 with MVC",
+      "Azure SQL",
+      "Power Automate",
+      "SharePoint",
+      "Entity Framework Core",
+      "Azure App Services",
+    ],
     role: "Full-stack Developer",
     feature: [
       "Designed and implemented lease creation module with customizable templates",
@@ -26,13 +68,23 @@ const items: ProjectDetail[] = [
       "Optimized database performance with Azure SQL indexing strategies",
       "Created responsive UI components with Angular Material",
     ],
-    duration: "Oct 2023",
+    duration: "Jan 2023 - Dec 2023",
+    startDate: parseDate("Jan 2023"),
   },
   {
-    id: 2,
+    id: 3,
     name: "Document Management System",
-    description: "Enterprise-grade document management solution with advanced security features and high availability storage for financial sector client.",
-    technologies: ["React", ".NET Core 6", "Azure Blob Storage", "Amazon S3", "Azure AD", "Redis Cache", "Elastic Search"],
+    description:
+      "Enterprise-grade document management solution with advanced security features and high availability storage for financial sector client.",
+    technologies: [
+      "React",
+      ".NET Core 6",
+      "Azure Blob Storage",
+      "Amazon S3",
+      "Azure AD",
+      "Redis Cache",
+      "Elastic Search",
+    ],
     role: "Backend Lead",
     feature: [
       "Architected document storage system using Azure Blob Storage with tiered storage",
@@ -43,12 +95,14 @@ const items: ProjectDetail[] = [
       "Implemented document preview generation for common file types",
       "Designed automated retention policy enforcement",
     ],
-    duration: "Nov 2022 – Mar 2023",
+    duration: "Sep 2022 – Apr 2023",
+    startDate: parseDate("Sep 2022"),
   },
   {
-    id: 3,
+    id: 4,
     name: "Ticketing Tool",
-    description: "Internal support ticket management system with email integration and SLA tracking for IT service desk.",
+    description:
+      "Internal support ticket management system with email integration and SLA tracking for IT service desk.",
     technologies: ["React", ".NET Core 6", "MS Graph API", "Power Automate", "Azure SQL"],
     role: "Full-stack Developer",
     feature: [
@@ -59,12 +113,14 @@ const items: ProjectDetail[] = [
       "Built knowledge base integration for suggested solutions",
       "Developed automated ticket assignment based on skillset",
     ],
-    duration: "Sep 2022 – Oct 2022",
+    duration: "Mar 2022 – Oct 2022",
+    startDate: parseDate("Mar 2022"),
   },
   {
-    id: 4,
+    id: 5,
     name: "Leave Management System",
-    description: "HR management tool for tracking employee leaves, approvals, and balancing with company policies and labor laws.",
+    description:
+      "HR management tool for tracking employee leaves, approvals, and balancing with company policies and labor laws.",
     technologies: ["React", ".NET Core 6", "SQL", "Microsoft Power BI"],
     role: "Frontend Lead",
     feature: [
@@ -76,11 +132,13 @@ const items: ProjectDetail[] = [
       "Implemented mobile-responsive design for on-the-go access",
     ],
     duration: "Jul 2022 – Aug 2022",
+    startDate: parseDate("Jul 2022"),
   },
   {
-    id: 5,
+    id: 6,
     name: "Project Management System",
-    description: "End-to-end project tracking solution for consulting firm with time tracking, resource allocation, and client billing features.",
+    description:
+      "End-to-end project tracking solution for consulting firm with time tracking, resource allocation, and client billing features.",
     technologies: ["Angular", ".NET Core 6", "SQL Server", "JWT Authentication"],
     role: "Full-stack Developer",
     feature: [
@@ -92,11 +150,13 @@ const items: ProjectDetail[] = [
       "Created API for integration with accounting software",
     ],
     duration: "Feb 2022 – Jul 2022",
+    startDate: parseDate("Feb 2022"),
   },
   {
-    id: 6,
+    id: 7,
     name: "Employee Management and Payroll System",
-    description: "Comprehensive HR system handling employee records, performance reviews, and payroll processing for mid-sized company.",
+    description:
+      "Comprehensive HR system handling employee records, performance reviews, and payroll processing for mid-sized company.",
     technologies: ["Blazor", ".NET Core 6", "SQL Server", "Azure AD"],
     role: "Frontend Developer",
     feature: [
@@ -108,9 +168,10 @@ const items: ProjectDetail[] = [
       "Created reporting module for HR analytics",
     ],
     duration: "Feb 2021 – Jul 2021",
+    startDate: parseDate("Feb 2021"),
   },
   {
-    id: 7,
+    id: 8,
     name: "Urban Clap UI",
     description: "Service marketplace UI redesign focusing on improved conversion rates and mobile experience.",
     technologies: ["Adobe XD", "HTML/CSS", "JavaScript", "Bootstrap"],
@@ -124,12 +185,14 @@ const items: ProjectDetail[] = [
       "Optimized checkout process reducing abandonment",
     ],
     duration: "Oct 2017 – Jan 2018",
+    startDate: parseDate("Oct 2017"),
   },
   {
-    id: 8,
+    id: 9,
     name: "Hospital Project UI (AIMS Ranchi)",
-    description: "Patient management system interface for multi-specialty hospital with focus on accessibility and clinician workflow.",
-    technologies: ["React",".Net 6","SSMS"],
+    description:
+      "Patient management system interface for multi-specialty hospital with focus on accessibility and clinician workflow.",
+    technologies: ["React", ".Net 6", "SSMS"],
     role: "UI/UX Designer",
     feature: [
       "Designed patient registration flow reducing time by 35%",
@@ -140,66 +203,86 @@ const items: ProjectDetail[] = [
       "Created responsive designs for bedside terminals",
     ],
     duration: "Feb 2018 – Jul 2018",
+    startDate: parseDate("Feb 2018"),
   },
-  {
-    id: 9,
-    name: "E-commerce Platform Migration",
-    description: "Migration of legacy e-commerce system to modern microservices architecture with improved performance.",
-    technologies: [".NET Core 7", "MongoDB","ClickHouse", "Redis"],
-    role: "Frontend Specialist",
-    feature: [
-      "Led migration of UI components to Angular 16",
-      "Improved page load performance by 40%",
-      "Implemented lazy loading for product images",
-      "Developed AB testing framework for UI changes",
-      "Created responsive product configurator",
-      "Integrated with new checkout microservice",
-    ],
-    duration: "Apr 2023 – Present",
-  },
-   {
-    id: 11,
-    name: "Fintech Trading and Investment Platform",
-    description: "A robust trading and investment platform for Nuvama (formerly Edelweiss), providing real-time market data, portfolio management, and transaction tracking for retail and institutional investors.",
-    technologies: ["React", ".NET Core 6, 8", "Mongo", "SQL", "Entity Framework Core", "Redis", "python"],
-    role: "Full-stack Developer",
-    feature: [
-      "Implemented real-time market data updates using SignalR and Azure Service Bus",
-      "Built secure transaction modules for equity, commodity, and derivatives trading",
-      "Integrated Azure SQL with high-frequency data writes and optimized query performance",
-      "Created dashboards for tracking portfolio performance and order histories",
-      "Implemented advanced order types and stop-loss logic",
-      "Built notification services for order confirmations and trade alerts via MS Graph API",
-      "Ensured secure user access with Azure AD and JWT-based authentication",
-      "Collaborated on API design and versioning for mobile and web platforms",
-    ],
-    duration: "Apr 2023 – Present",
-  }
-];
+].sort((a, b) => b.startDate.getTime() - a.startDate.getTime())
 
+const FloatingMenu: React.FC<{
+  projects: ProjectDetail[]
+  activeId: number | null
+  scrollToProject: (id: number) => void
+}> = ({ projects, activeId, scrollToProject }) => {
+  const [visible, setVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
+  const menuRef = useRef<HTMLDivElement>(null)
 
-const ProjectCard: React.FC<{ project: ProjectDetail }> = ({ project }) => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      // Only hide if scrolling down more than 100px
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setVisible(false)
+      } else {
+        setVisible(true)
+      }
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [lastScrollY])
+
   return (
-    <div className="group relative bg-white rounded-lg shadow-md border border-gray-200 hover:bg-teal-50 transition-all duration-300 p-5 lg:w-fit sm:w-full m-5 mx-2">
-      <h3 className="text-base font-semibold text-gray-800 group-hover:text-teal-700 mb-1">
-        {project.name}
-      </h3>
-
-      <div className="text-xs text-teal-600 font-medium mb-1">
-        {project.duration}
+    <div
+      ref={menuRef}
+      className={`fixed right-4 bottom-4 transition-all duration-300 z-50 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}`}
+    >
+      <div className="bg-white rounded-xl shadow-xl border border-gray-200 p-4 max-h-[70vh] overflow-y-auto w-64">
+        <h3 className="font-bold text-gray-800 mb-3 sticky top-0 bg-white pb-2 border-b border-gray-100">
+          Projects Navigation
+        </h3>
+        <ul className="space-y-1">
+          {projects.map((project) => (
+            <li key={project.id}>
+              <button
+                onClick={() => scrollToProject(project.id)}
+                className={`flex items-center px-3 py-2 rounded-lg text-sm transition-colors w-full text-left ${
+                  activeId === project.id
+                    ? "bg-purple-50 text-purple-800 font-medium border border-purple-200"
+                    : "text-gray-600 hover:bg-gray-50"
+                }`}
+              >
+                <span className="truncate">{project.name}</span>
+              </button>
+            </li>
+          ))}
+        </ul>
       </div>
+    </div>
+  )
+}
 
+const ProjectCard: React.FC<{
+  project: ProjectDetail
+  onClick: () => void
+}> = ({ project, onClick }) => {
+  return (
+    <div
+      className="group relative bg-white rounded-lg shadow-md border border-gray-200 hover:bg-purple-50 transition-all duration-300 p-5 lg:w-fit sm:w-full m-5 mx-2 cursor-pointer"
+      onClick={onClick}
+    >
+      <h3 className="text-base font-semibold text-gray-800 group-hover:text-purple-700 mb-1">{project.name}</h3>
+      <div className="text-xs text-purple-600 font-medium mb-1">{project.duration}</div>
       {project.role && (
         <div className="text-xs text-gray-600 bg-gray-100 rounded px-2 py-0.5 inline-block mb-2">
           Role: {project.role}
         </div>
       )}
-
       <div className="flex flex-wrap gap-1 mt-1">
-        {project.technologies?.slice(0, 3).map((tech, idx) => (
+        {project.technologies?.slice(0, 4).map((tech, idx) => (
           <span
             key={idx}
-            className="bg-teal-50 text-teal-700 text-[11px] px-2 py-0.5 rounded-md group-hover:bg-teal-100 transition-colors"
+            className="bg-purple-50 text-purple-700 text-[11px] px-2 py-0.5 rounded-md group-hover:bg-purple-100 transition-colors"
           >
             {tech}
           </span>
@@ -209,128 +292,194 @@ const ProjectCard: React.FC<{ project: ProjectDetail }> = ({ project }) => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-
-const ProjectDetails: React.FC<{ project: ProjectDetail }> = ({ project }) => {
+const ProjectDetails: React.FC<{
+  project: ProjectDetail
+  projectRef: React.RefObject<HTMLDivElement | null>
+}> = ({ project, projectRef }) => {
   return (
-    <div className="bg-white rounded-xl w-full shadow-md border border-gray-100 mb-8 overflow-hidden">
-      <div className="p-8">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-1">{project.name}</h2>
-            <p className="text-teal-600 font-medium">{project.duration}</p>
-          </div>
-          {project.role && (
-            <span className="bg-teal-100 text-teal-800 text-sm px-4 py-2 rounded-full font-medium">
-              {project.role}
-            </span>
-          )}
-        </div>
-
-        {project.description && (
-          <div className="mt-8">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3 pb-2 border-b border-gray-100">
-              Project Overview
-            </h3>
-            <p className="text-gray-700 leading-relaxed">{project.description}</p>
-          </div>
-        )}
-
-        {project.technologies && (
-          <div className="mt-8">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3 pb-2 border-b border-gray-100">
-              Technologies Used
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {project.technologies.map((tech, index) => (
-                <span 
-                  key={index} 
-                  className="bg-gradient-to-br from-teal-50 to-teal-100 text-teal-800 text-sm px-4 py-2 rounded-lg shadow-sm border border-teal-100"
-                >
-                  {tech}
-                </span>
-              ))}
+    <section ref={projectRef} className="scroll-mt-24 mb-12">
+      <div className="bg-white rounded-xl w-full shadow-md border border-gray-100 overflow-hidden">
+        <div className="p-6 md:p-8">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">{project.name}</h2>
+              <p className="text-purple-600 font-medium">{project.duration}</p>
             </div>
+            {project.role && (
+              <span className="bg-purple-100 text-purple-800 text-sm px-4 py-2 rounded-full font-medium">
+                {project.role}
+              </span>
+            )}
           </div>
-        )}
 
-        <div className="mt-8">
-          <h3 className="text-xl font-semibold text-gray-900 mb-3 pb-2 border-b border-gray-100">
-            Key Features & Contributions
-          </h3>
-          <ul className="space-y-4">
-            {project.feature.map((feat, index) => (
-              <li key={index} className="flex items-start">
-                <span className="flex-shrink-0 mt-1 mr-3">
-                  <svg 
-                    className="w-5 h-5 text-teal-500" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24" 
-                    xmlns="http://www.w3.org/2000/svg"
+          {project.description && (
+            <div className="mt-6">
+              <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-3 pb-2 border-b border-gray-100">
+                Project Overview
+              </h3>
+              <p className="text-gray-700 leading-relaxed">{project.description}</p>
+            </div>
+          )}
+
+          {project.technologies && (
+            <div className="mt-6">
+              <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-3 pb-2 border-b border-gray-100">
+                Technologies Used
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.map((tech, index) => (
+                  <span
+                    key={index}
+                    className="bg-gradient-to-br from-purple-50 to-purple-100 text-purple-800 text-sm px-3 py-1.5 rounded-lg shadow-sm border border-purple-100"
                   >
-                    <path 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      strokeWidth={2} 
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" 
-                    />
-                  </svg>
-                </span>
-                <span className="text-gray-700 leading-relaxed">{feat}</span>
-              </li>
-            ))}
-          </ul>
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div className="mt-6">
+            <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-3 pb-2 border-b border-gray-100">
+              Key Features & Contributions
+            </h3>
+            <ul className="space-y-3">
+              {project.feature.map((feat, index) => (
+                <li key={index} className="flex items-start">
+                  <span className="flex-shrink-0 mt-1 mr-3">
+                    <svg
+                      className="w-5 h-5 text-purple-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </span>
+                  <span className="text-gray-700 leading-relaxed">{feat}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  );
-};
+    </section>
+  )
+}
 
 export const ProjectsShowcase: React.FC = () => {
+  const projectsLargeRef = useRef<HTMLDivElement>(null)
+
+  const scrollToProjectsLarge = (projectId: number) => {
+    if (projectsLargeRef.current) {
+      projectsLargeRef.current.scrollIntoView({ behavior: "smooth" })
+
+      // After scrolling to the projects section, find the specific project
+      setTimeout(() => {
+        const projectElement = document.querySelector(`[data-project-id="${projectId}"]`)
+        if (projectElement) {
+          projectElement.scrollIntoView({ behavior: "smooth", block: "start" })
+        }
+      }, 500)
+    }
+  }
+
   return (
-    <div className="w-full py-16">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+    <div className="w-full">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            My <span className="text-teal-600">Project Portfolio</span>
+            My <span className="text-purple-600">Project Portfolio</span>
           </h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-teal-400 to-teal-600 mx-auto rounded-full mb-6"></div>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-purple-400 to-purple-600 mx-auto rounded-full mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            A collection of my professional work showcasing full-stack development expertise with Angular and .NET Core
+            A collection of my professional work showcasing full-stack development expertise with modern technologies
           </p>
         </div>
-        <div className="sm:grid sm:grid-cols-1 lg:flex lg:flex-wrap justify-evenly">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {items.map((item) => (
-            <ProjectCard key={item.id} project={item} />
+            <ProjectCard key={item.id} project={item} onClick={() => scrollToProjectsLarge(item.id)} />
           ))}
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const ProjectsShowcaseLarge: React.FC = () => {
+  const [activeId, setActiveId] = useState<number | null>(null)
+  const projectRefs = useRef(items.map(() => createRef<HTMLDivElement>()))
+  const observerRef = useRef<IntersectionObserver | null>(null)
+
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const projectId = Number.parseInt(entry.target.getAttribute("data-project-id") || "0")
+            if (projectId) {
+              setActiveId(projectId)
+            }
+          }
+        })
+      },
+      { threshold: 0.5, rootMargin: "-100px 0px -100px 0px" },
+    )
+
+    const currentObserver = observerRef.current
+
+    projectRefs.current.forEach((ref, index) => {
+      if (ref.current) {
+        ref.current.setAttribute("data-project-id", items[index].id.toString())
+        currentObserver.observe(ref.current)
+      }
+    })
+
+    return () => {
+      if (currentObserver) currentObserver.disconnect()
+    }
+  }, [])
+
+  const scrollToProject = (id: number) => {
+    const index = items.findIndex((item) => item.id === id)
+    if (index !== -1 && projectRefs.current[index].current) {
+      projectRefs.current[index].current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      })
+    }
+  }
+
   return (
-    <div className="w-full py-10 mt-5">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+    <div className="w-full py-10 bg-gray-50 relative">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Project <span className="text-teal-600">Details</span>
+            Project <span className="text-purple-600">Details</span>
           </h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-teal-400 to-teal-600 mx-auto rounded-full mb-6"></div>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-purple-400 to-purple-600 mx-auto rounded-full mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Detailed view of my professional projects with technologies used and key contributions
           </p>
         </div>
         <div className="space-y-8">
-          {items.reverse().map((item) => (
-            <ProjectDetails key={item.id} project={item} />
+          {items.map((item, index) => (
+            <div key={item.id} data-project-id={item.id}>
+              <ProjectDetails project={item} projectRef={projectRefs.current[index]} />
+            </div>
           ))}
         </div>
       </div>
+      <FloatingMenu projects={items} activeId={activeId} scrollToProject={scrollToProject} />
     </div>
-  );
-};
+  )
+}

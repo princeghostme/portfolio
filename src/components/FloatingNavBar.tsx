@@ -15,10 +15,10 @@ export interface NavItem {
 
 const navItems: NavItem[] = [
   { showText: 'Home', url: '/', icon: <FaHome /> },
-  { showText: 'Work & Internships', url: '/work', icon: <FaBriefcase /> },
+  { showText: 'Profession', url: '/work', icon: <FaBriefcase /> },
   { showText: 'Skills', url: '/skills', icon: <FaCode /> },
   { showText: 'Projects', url: '/projects', icon: <FaProjectDiagram /> },
-  { showText: 'Contact', url: '/aboutme', icon: <FaAddressCard /> },
+  { showText: 'About', url: '/aboutme', icon: <FaAddressCard /> },
 ];
 
 const user = {
@@ -72,7 +72,7 @@ export const TopNavBar = () => {
                 key={index}
                 to={item.url}
                 className={`flex items-center text-gray-700 text-base font-medium px-2 py-2.5
-                  ${location.pathname === item.url ? 'text-teal-600 bg-gray-50//90 rounded-lg' : 'hover:bg-teal-600 hover:text-white rounded-lg'}`}
+                  ${location.pathname === item.url ? 'text-purple-600 bg-gray-50//90 rounded-lg' : 'hover:bg-purple-600 hover:text-white rounded-lg'}`}
               >
                 <span className="text-lg">{item.icon}</span>
               </Link>
@@ -89,8 +89,8 @@ export const TopNavBar = () => {
                 to={item.url}
                 className={`text-sm font-medium px-3 py-1.5 rounded-lg transition-colors duration-200 flex items-center
                   ${location.pathname === item.url
-                    ? 'text-teal-600 bg-gray-50//90'
-                    : 'text-gray-700 hover:text-teal-600 hover:bg-gray-100/50'}`}
+                    ? 'text-purple-600 bg-gray-50//90'
+                    : 'text-gray-700 hover:text-purple-600 hover:bg-gray-100/50'}`}
               >
                 <span className="mr-2 text-base">{item.icon}</span>
                 {item.showText}
@@ -108,8 +108,8 @@ export const TopNavBar = () => {
                 to={item.url}
                 className={`flex items-center text-base font-medium px-4 py-2.5 transition-colors duration-200 rounded-lg
                   ${location.pathname === item.url
-                    ? 'text-teal-600 bg-gray-50//90'
-                    : 'text-gray-700 hover:text-teal-600 hover:bg-gray-50//90'}`}
+                    ? 'text-purple-600 bg-gray-50//90'
+                    : 'text-gray-700 hover:text-purple-600 hover:bg-gray-50//90'}`}
                 onClick={() => setShowMobileMenu(false)}
               >
                 <span className="mr-3 text-lg">{item.icon}</span>
@@ -126,7 +126,7 @@ export const TopNavBar = () => {
               onClick={() => setShowUserDetails(!showUserDetails)}
               onMouseEnter={() => !isMobile && setShowUserDetails(true)}
               className={`w-10 h-10 rounded-xl border-2 overflow-hidden transition-all duration-300
-                ${showUserDetails ? 'border-teal-500' : 'border-gray-300 hover:border-teal-500'}`}
+                ${showUserDetails ? 'border-purple-500' : 'border-gray-300 hover:border-purple-500'}`}
               aria-label="User profile"
             >
               <img src={user.imageUrl} alt="User profile" className="w-full h-full object-cover" />
@@ -139,10 +139,10 @@ export const TopNavBar = () => {
             >
               <button
                 onClick={() => setShowUserDetails(false)}
-                className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-lg bg-teal-100 hover:bg-teal-200 transition-colors z-10"
+                className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-lg bg-purple-100 hover:bg-purple-200 transition-colors z-10"
                 aria-label="Close profile"
               >
-                <FaTimes className="text-teal-500" />
+                <FaTimes className="text-purple-500" />
               </button>
 
               <div className="flex items-center space-x-4 p-4 border-b border-gray-100">
@@ -155,15 +155,15 @@ export const TopNavBar = () => {
 
               <div className="p-4 space-y-3">
                 <div className="flex items-center text-gray-700">
-                  <FaEnvelope className="text-teal-400 mr-3 min-w-[16px]" />
+                  <FaEnvelope className="text-purple-400 mr-3 min-w-[16px]" />
                   <span className="text-sm truncate">{user.email}</span>
                 </div>
                 <div className="flex items-center text-gray-700">
-                  <FaPhone className="text-teal-400 mr-3 min-w-[16px]" />
+                  <FaPhone className="text-purple-400 mr-3 min-w-[16px]" />
                   <span className="text-sm">{user.phone}</span>
                 </div>
                 <div className="flex items-center text-gray-700">
-                  <FaMapMarkerAlt className="text-teal-400 mr-3 min-w-[16px]" />
+                  <FaMapMarkerAlt className="text-purple-400 mr-3 min-w-[16px]" />
                   <span className="text-sm">{user.location}</span>
                 </div>
               </div>
@@ -189,7 +189,7 @@ export const TopNavBar = () => {
                 <a
                   href={user.resumeUrl}
                   download
-                  className="flex items-center space-x-2 text-gray-700 hover:text-teal-600 transition text-sm font-medium"
+                  className="flex items-center space-x-2 text-gray-700 hover:text-purple-600 transition text-sm font-medium"
                 >
                   <FaDownload />
                   <span>Resume</span>
@@ -206,7 +206,7 @@ export const TopNavBar = () => {
                   </a>
                   <button
                     onClick={handleEmail}
-                    className="text-gray-600 hover:text-teal-500 transition"
+                    className="text-gray-600 hover:text-purple-500 transition"
                     title="Email"
                   >
                     <FaEnvelope size={18} />

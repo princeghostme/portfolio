@@ -62,7 +62,7 @@ const GrowthStack = () => {
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-14">
       {/* Timeline Visualization */}
-      <div className="relative h-3 bg-gradient-to-r from-teal-200 to-teal-100 rounded-full mb-16 shadow-inner">
+      <div className="relative h-3 bg-gradient-to-r from-purple-200 to-purple-100 rounded-full mb-16 shadow-inner">
         {/* Progress Lines */}
         {growthData.map((_, index) => {
           if (index === 0) return null;
@@ -70,7 +70,7 @@ const GrowthStack = () => {
           return (
             <div
               key={`progress-${index}`}
-              className="absolute h-3 bg-teal-500 rounded-full transition-all duration-700 ease-in-out"
+              className="absolute h-3 bg-purple-500 rounded-full transition-all duration-700 ease-in-out"
               style={{ width, left: "-5%" }}
             ></div>
           );
@@ -82,7 +82,7 @@ const GrowthStack = () => {
           return (
             <div
               key={`marker-${index}`}
-              className="absolute -top-2 w-6 h-6 bg-white border-4 border-teal-500 rounded-full shadow-md z-10"
+              className="absolute -top-2 w-6 h-6 bg-white border-4 border-purple-500 rounded-full shadow-md z-10"
               style={{ left: position, transform: "translateX(-50%)" }}
             />
           );
@@ -94,7 +94,7 @@ const GrowthStack = () => {
           return (
             <div
               key={`year-${index}`}
-              className="absolute top-8 text-xs font-semibold text-teal-700 w-24 text-center"
+              className="absolute top-8 text-xs font-semibold text-purple-700 w-24 text-center"
               style={{ left: position, transform: "translateX(-50%)" }}
             >
               {item.year}
@@ -110,7 +110,7 @@ const GrowthStack = () => {
             key={`detail-${index}`}
             className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition w-full max-w-xs"
           >
-            <div className="text-sm font-semibold text-teal-700">{item.company}</div>
+            <div className="text-sm font-semibold text-purple-700">{item.company}</div>
             <div className="text-xs text-gray-600">{item.title}</div>
             <div className="text-xs text-gray-500">{item.duration}</div>
             <div className="text-[10px] text-gray-400 mt-1">{item.year}</div>

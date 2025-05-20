@@ -1,6 +1,7 @@
 import React from "react";
+import EducationCard from "./EducationCard";
 
-interface EducationEntry {
+export interface EducationEntry {
   duration: string;
   degree: string;
   university: string;
@@ -79,55 +80,17 @@ const educationData: EducationEntry[] = [
   },
 ];
 
+
 const EducationTimeline: React.FC = () => {
   return (
     <div className="bg-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto">
-        <h2 className="text-4xl font-bold text-teal-800 mb-10 text-center">
-          Education <span className="text-teal-600">Timeline</span>
+        <h2 className="text-4xl font-bold text-purple-800 mb-10 text-center">
+          Education <span className="text-purple-600">Timeline</span>
         </h2>
         <div className="space-y-10">
           {educationData.map((edu, index) => (
-            <div
-              key={index}
-              className="relative border-l-4 border-teal-500 pl-6 pb-6"
-            >
-              <div className="absolute -left-2 top-1.5 w-4 h-4 bg-teal-500 rounded-full shadow-md"></div>
-              <p className="text-sm text-gray-500 mb-1">{edu.duration}</p>
-              <h3 className="text-xl font-semibold text-teal-700">{edu.degree}</h3>
-              <p className="text-md text-teal-900 mb-1">{edu.university}</p>
-              {edu.gpa && <p className="text-sm text-gray-600 mb-2">{edu.gpa}</p>}
-              <ul className="list-disc list-inside text-gray-700 space-y-1 mb-2">
-                {edu.highlights.map((point, i) => (
-                  <li key={i}>{point}</li>
-                ))}
-              </ul>
-              {edu.projects && (
-                <>
-                  <h4 className="text-sm font-semibold text-teal-600 mt-2">Key Projects:</h4>
-                  <ul className="list-disc list-inside text-gray-700 space-y-1 mb-2">
-                    {edu.projects.map((proj, i) => (
-                      <li key={i}>{proj}</li>
-                    ))}
-                  </ul>
-                </>
-              )}
-              {edu.technologies && (
-                <p className="text-sm text-gray-800">
-                  <strong>Technologies:</strong> {edu.technologies.join(", ")}
-                </p>
-              )}
-              {edu.extracurriculars && (
-                <>
-                  <h4 className="text-sm font-semibold text-teal-600 mt-2">Extracurriculars:</h4>
-                  <ul className="list-disc list-inside text-gray-700 space-y-1">
-                    {edu.extracurriculars.map((activity, i) => (
-                      <li key={i}>{activity}</li>
-                    ))}
-                  </ul>
-                </>
-              )}
-            </div>
+            <EducationCard key={index} education={edu} />
           ))}
         </div>
       </div>

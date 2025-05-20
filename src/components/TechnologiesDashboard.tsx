@@ -29,11 +29,11 @@ const renderStars = (rating : number) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
         if (rating >= i) {
-            stars.push(<Star key={i} className="w-3 h-3 text-yellow-500 fill-yellow-500" />);
+            stars.push(<Star key={i} className="w-3 h-3 text-purple-500 fill-purple-500" />);
         } else if (rating >= i - 0.5) {
-            stars.push(<StarHalf key={i} className="w-3 h-3 text-yellow-500 fill-yellow-500" />);
+            stars.push(<StarHalf key={i} className="w-3 h-3 text-purple-500 fill-purple-500" />);
         } else {
-            stars.push(<StarOff key={i} className="w-3 h-3 text-gray-300" />);
+            stars.push(<StarOff key={i} className="w-3 h-3 text-purple-300" />);
         }
     }
     return stars;
@@ -43,10 +43,10 @@ const TechnologiesDashboard = () => {
     return (
         <div className="mb-5 bg-white py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center mb-12">
-                <h1 className="text-3xl md:text-4xl font-bold text-teal-900 mb-2">
-                    My <span className="text-teal-600">Core Skills</span>
+                <h1 className="text-3xl md:text-4xl font-bold text-purple-900 mb-2">
+                    My <span className="text-purple-600">Core Skills</span>
                 </h1>
-                <p className="text-teal-700 text-base md:text-lg">
+                <p className="text-purple-700 text-base md:text-lg">
                     Here's a quick overview of my most proficient technologies.
                 </p>
             </div>
@@ -55,9 +55,9 @@ const TechnologiesDashboard = () => {
                 {skills.map((skill, index) => (
                     <div
                         key={index}
-                        className="bg-teal-50 rounded-xl p-2 px-5 my-2 mx-5 sm:my-1 sm:mx-2  shadow-sm hover:shadow-md transition"
+                        className="bg-purple-50 rounded-xl p-2 px-5 my-2 mx-5 sm:my-1 sm:mx-2  shadow-sm hover:shadow-md transition"
                     >
-                        <h2 className="text-sm font-semibold text-teal-800 text-center">
+                        <h2 className="text-sm font-semibold text-purple-800 text-center">
                             {skill.name}
                         </h2>
                         <div className="flex justify-center">{renderStars(skill.rating)}</div>
@@ -68,7 +68,7 @@ const TechnologiesDashboard = () => {
             <div className="mt-12 text-center">
                 <Link
                     to="/skills"
-                    className="inline-block px-6 py-2 text-white bg-teal-600 rounded-full hover:bg-teal-700 text-sm font-medium transition"
+                    className="inline-block px-6 py-2 text-white bg-purple-600 rounded-full hover:bg-purple-700 text-sm font-medium transition"
                 >
                     View Full Skillset
                 </Link>

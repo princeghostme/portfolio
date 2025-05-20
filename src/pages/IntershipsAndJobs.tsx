@@ -9,7 +9,7 @@ const InternshipsAndJobs = () => {
   const tabClass = (active: boolean) => `
     flex items-center justify-center px-4 py-1.5 sm:px-5 sm:py-2 rounded-lg
     text-sm sm:text-base font-medium transition-all duration-200
-    ${active ? 'bg-teal-600 text-white' : 'text-gray-800 hover:bg-teal-100/60'}
+    ${active ? 'bg-purple-600 text-white' : 'text-gray-800 hover:bg-purple-100/60'}
   `;
 
   const renderContent = () => {
