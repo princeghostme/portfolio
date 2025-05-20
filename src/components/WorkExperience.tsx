@@ -6,13 +6,13 @@ const WorkExperience = () => {
             duration: "Apr 2025 – Present",
             location: "Bangalore",
             responsibilities: [
-                "Collaborated with cross-functional teams to develop and deploy scalable healthcare and insurance software solutions for U.S.-based hospitals and providers",
-                "Contributed to AaNeelCare modules like EMR export, and patient portals used by hospitals across the U.S.",
+                // "Collaborated with cross-functional teams to develop and deploy scalable healthcare and insurance software solutions for U.S.-based hospitals and providers",
+                "Contributed to AaNeelCare modules like EMR export .",
                 "Built and maintained .NET Core and Express.js APIs for electronic medical records and data synchronization",
-                "Developed and optimized React-based front-end interfaces ensuring responsiveness and HIPAA compliance",
-                "Implemented secure integrations using Amazon S3, SQL Server, and MongoDB for health data storage and retrieval",
-                "Enhanced system performance and maintainability through refactoring, code reviews, and CI/CD practices",
-                "Ensured compliance with healthcare standards such as CMS, HIPAA while working with protected health data"
+                // "Developed and optimized React-based front-end interfaces ensuring responsiveness and HIPAA compliance",
+                // "Implemented secure integrations using Amazon S3, SQL Server, and MongoDB for health data storage and retrieval",
+                // "Enhanced system performance and maintainability through refactoring, code reviews, and CI/CD practices",
+                // "Ensured compliance with healthcare standards such as CMS, HIPAA while working with protected health data"
             ],
             features: [
                 "EMR(Electronic Medical Records) export",
@@ -26,7 +26,7 @@ const WorkExperience = () => {
         },
         {
             company: "MITS Global",
-            position: "Full Stack Developer (Senior & Team Lead)",
+            position: "Full Stack Developer (Senior to Team Lead)",
             duration: "Dec 2023 – March 2025",
             location: "Bangalore",
             responsibilities: [
