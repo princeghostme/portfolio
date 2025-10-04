@@ -1,4 +1,4 @@
-import { HashRouter as Router } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import { TopNavBar } from './components/FloatingNavBar'
 import AppRouter from './routers/AppRouter'
 import ContactMe from './components/ContactMe '
@@ -8,7 +8,7 @@ const App = () => {
 
   return (
     <>
-      <Router>
+      <BrowserRouter>
         <TopNavBar></TopNavBar>
         <AppRouter></AppRouter>
         <ContactMe></ContactMe>
@@ -19,7 +19,7 @@ const App = () => {
             <p>© {currentYear} All Rights Reserved. Designed and Developed with ❤️</p>
           </div>
         </footer>
-      </Router>
+      </BrowserRouter>
     </>
   )
 }
