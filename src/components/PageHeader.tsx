@@ -1,3 +1,4 @@
+import { RESUME } from "../AppConstraint";
 import pdfResume from "../assets/Prince_Yadav_CV.pdf";
 import GrowthStack from "./GrowthStack";
 import { FiDownload, FiArrowRight } from "react-icons/fi";
@@ -38,12 +39,27 @@ const PageHeader = () => {
         <div className="flex gap-4 justify-center w-full">
           <div>
             <a
-              href={pdfResume}
+              href={RESUME.PDF}
               download="Prince_Resume.pdf"
               className="relative flex items-center px-8 py-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <span className="text-lg font-semibold text-purple-900 group-hover:text-purple-700 transition-colors">
-                Download Resume
+                Download Resume (pdf format)
+              </span>
+              <div className="ml-3 flex items-center space-x-2">
+                <FiDownload className="w-5 h-5 text-purple-600 group-hover:text-purple-800 transition-colors" />
+                <FiArrowRight className="w-4 h-4 text-purple-600 opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all" />
+              </div>
+            </a>
+          </div>
+          <div>
+            <a
+              href={RESUME.DOCX}
+              download="Prince_Resume.docx"
+              className="relative flex items-center px-8 py-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              <span className="text-lg font-semibold text-purple-900 group-hover:text-purple-700 transition-colors">
+                Download Resume (word format)
               </span>
               <div className="ml-3 flex items-center space-x-2">
                 <FiDownload className="w-5 h-5 text-purple-600 group-hover:text-purple-800 transition-colors" />
