@@ -1,3 +1,5 @@
+import { URLS } from "../AppConstraint";
+
 const ContactMe = () => {
     return (
         <div className="w-full bg-purple-50 py-10 px-4 sm:px-6 border-t border-purple-100">
@@ -46,7 +48,7 @@ const ContactMe = () => {
                         }
                         title="LinkedIn"
                         content="Prince Yadav"
-                        href="https://www.linkedin.com/in/prince-yadav-340b99134/"
+                        href={URLS.LINKEDIN}
                     />
                 </div>
             </div>

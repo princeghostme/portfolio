@@ -214,7 +214,7 @@ const TechnologiesDetails = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-white py-16 px-4 sm:px-6 lg:px-8">
-      <div className=" mx-auto">
+      <div className=" mx-auto mt-5">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-purple-900 mb-4">
             Full <span className="text-purple-600">Technical Breakdown</span>

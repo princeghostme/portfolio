@@ -6,6 +6,7 @@ import {
 import resume from '../assets/resume.pdf';
 import { Link, useLocation } from 'react-router-dom';
 import profileimg from '../assets/profileImg.jpeg';
+import { URLS } from '../AppConstraint';
 
 export interface NavItem {
   showText: string;
@@ -29,8 +30,8 @@ const user = {
   location: 'Bangalore, India',
   imageUrl: profileimg,
   resumeUrl: resume,
-  linkedIn: 'https://www.linkedin.com/in/prince-yadav-340b99134',
-  whatsapp: 'https://wa.me/917004571707',
+  linkedIn: URLS.LINKEDIN,
+  whatsapp: URLS.WHATSAPP,
 };
 
 export const TopNavBar = () => {
