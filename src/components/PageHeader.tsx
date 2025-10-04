@@ -1,5 +1,4 @@
 import { RESUME } from "../AppConstraint";
-import pdfResume from "../assets/Prince_Yadav_CV.pdf";
 import GrowthStack from "./GrowthStack";
 import { FiDownload, FiArrowRight } from "react-icons/fi";
 

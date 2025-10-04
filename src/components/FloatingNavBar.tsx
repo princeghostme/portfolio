@@ -3,10 +3,9 @@ import {
   FaLinkedin, FaWhatsapp, FaDownload, FaHome, FaBriefcase, FaCode, FaProjectDiagram,
   FaAddressCard, FaBars, FaPhone, FaEnvelope, FaMapMarkerAlt, FaTimes
 } from 'react-icons/fa';
-import resume from '../assets/resume.pdf';
 import { Link, useLocation } from 'react-router-dom';
 import profileimg from '../assets/profileImg.jpeg';
-import { URLS } from '../AppConstraint';
+import { RESUME, URLS } from '../AppConstraint';
 
 export interface NavItem {
   showText: string;
@@ -29,7 +28,7 @@ const user = {
   phone: '+91 7004571707',
   location: 'Bangalore, India',
   imageUrl: profileimg,
-  resumeUrl: resume,
+  resumeUrl: RESUME.DOCX,
   linkedIn: URLS.LINKEDIN,
   whatsapp: URLS.WHATSAPP,
 };
