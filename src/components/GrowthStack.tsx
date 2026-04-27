@@ -3,52 +3,46 @@ interface GrowthData {
   title: string;
   company: string;
   duration: string;
+  description?: string;
 }
 
 const GrowthStack = () => {
   const growthData: GrowthData[] = [
-     {
+    {
       year: "2025",
-      title: "Enterprise Systems",
+      title: "Senior Software Developer",
+      company: "DynPro India",
+      duration: "Nov 2025 - Present",
+      description: "Microservices migration, API Gateway, Entra ID auth"
+    },
+    {
+      year: "2025",
+      title: "Software Developer",
       company: "Aaneel Infotech",
-      duration: "Mar 2025 - Present",
+      duration: "Apr 2025 - Nov 2025",
+      description: "Healthcare SaaS, 10K+ concurrent users"
     },
     {
       year: "2023",
-      title: "Enterprise Systems",
+      title: "Software Developer",
       company: "MITS Global",
-      duration: "Dec 2022 - Mar 2025",
+      duration: "Dec 2023 - Mar 2025",
+      description: "Fintech platform, Performance optimization (20-30%)"
     },
     {
       year: "2022",
-      title: "Enterprise Systems",
+      title: "Junior Software Developer",
       company: "Enaviya IT",
       duration: "Feb 2022 - Dec 2023",
+      description: "Enterprise applications, UI Performance"
     },
     {
       year: "2021",
-      title: "Developer",
+      title: "Software Developer Trainee",
       company: "Add Innovation",
       duration: "Aug 2021 - Dec 2021",
-    },
-    {
-      year: "2021",
-      title: "Enterprise Systems",
-      company: "Hindalco",
-      duration: "Feb 2021 - Jul 2021",
-    },
-    {
-      year: "2020",
-      title: "Full Stack & Research",
-      company: "Lithoera Technology",
-      duration: "Feb 2020 - Jul 2020",
-    },
-    {
-      year: "2017-18",
-      title: "UI/UX Foundations",
-      company: "PIALGO Solutions",
-      duration: "Oct 2017 - Jul 2018",
-    },
+      description: "AI-based inspection system, Python + .NET"
+    }
   ];
 
   const calculatePositions = (index: number, total: number) => {
@@ -104,16 +98,20 @@ const GrowthStack = () => {
       </div>
 
       {/* Experience Cards */}
-      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 justify-items-center">
+      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-items-center">
         {[...growthData].map((item, index) => (
           <div
             key={`detail-${index}`}
-            className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition w-full max-w-xs"
+            className="bg-white border-2 border-purple-100 rounded-lg p-4 shadow-sm hover:shadow-lg hover:border-purple-300 transition w-full max-w-sm group"
           >
-            <div className="text-sm font-semibold text-purple-700">{item.company}</div>
-            <div className="text-xs text-gray-600">{item.title}</div>
-            <div className="text-xs text-gray-500">{item.duration}</div>
-            <div className="text-[10px] text-gray-400 mt-1">{item.year}</div>
+            <div className="text-sm font-bold text-purple-700 group-hover:text-purple-900">{item.company}</div>
+            <div className="text-xs font-medium text-gray-700 mt-1">{item.title}</div>
+            <div className="text-xs text-gray-600 mt-1">{item.duration}</div>
+            {item.description && (
+              <div className="text-[10px] text-gray-500 mt-2 italic border-t border-gray-100 pt-2">
+                {item.description}
+              </div>
+            )}
           </div>
         ))}
       </div>

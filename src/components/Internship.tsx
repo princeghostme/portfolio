@@ -1,50 +1,36 @@
 const Internship = () => {
     const experiences = [
         {
-            type: "Internship",
-            company: "Hindalco",
-            position: "IT Trainee",
-            duration: "Feb 2021 – Jul 2021",
+            type: "Trainee Position",
+            company: "Add Innovation",
+            position: "Software Developer Trainee",
+            duration: "Aug 2021 – Dec 2021",
             description:
-                "Participated in developing an updated Employee Management System while gaining valuable enterprise software development experience.",
+                "Contributed to a product-based company specializing in image processing and AI/ML solutions.",
             responsibilities: [
-                "Shortened project timelines by six months through effective collaboration with the IT team",
-                "Analyzed the existing system and integrated new tools without affecting current data",
-                "Enhanced operational efficiency of the internal employee management system",
-                "Gained experience in requirements gathering, system design, and user training",
+                "Built prototype for AI-based inspection system using Python + .NET UI",
+                "Worked on improving detection outputs and algorithm accuracy",
+                "Collaborated with team on image processing implementations",
+                "Learned best practices in software development and system design",
             ],
-            features: ["Legacy modernization", "Data-safe integration", "Process automation"],
-            technologies: ["System Analysis", "Data Migration", "User Training", "Process Improvement"],
+            features: ["AI-based inspection", "Python + .NET", "Image processing", "Machine learning"],
+            technologies: ["Python", ".NET", "Image Processing", "Machine Learning", "Windows Forms"],
         },
         {
             type: "Internship",
-            company: "Lithoera Technology",
-            position: "Full Stack Intern",
-            duration: "Aug 2020 – Dec 2020",
-            description: "Contributed to an IoT-based government project while developing full-stack skills.",
+            company: "IoT-Based Government Project",
+            position: "Backend Developer",
+            duration: "Project Highlight",
+            description: "Backend APIs and device integration for IoT government solution with real-time monitoring.",
             responsibilities: [
-                "Served as team lead for an IoT-based government collaborative project",
-                "Gained hands-on experience with Python and its libraries for backend development",
-                "Published research in IJSRD, Vol-8 Issue 10, Dec-2020 journal",
-                "Delivered innovative solutions meeting government requirements",
+                "Developed REST APIs for device communication and data collection",
+                "Integrated with Azure IoT Hub for IoT device management",
+                "Built data processing pipeline for sensor data",
+                "Implemented real-time monitoring and alerting system",
+                "Optimized database queries for high-frequency data ingestion",
             ],
-            features: ["IoT innovation", "Government standards", "Research-driven dev"],
-            technologies: ["IoT", "Python", "Research", "Team Leadership"],
-        },
-        {
-            type: "Training",
-            company: "PIALGO Solutions",
-            position: "UI/UX Frontend Trainee",
-            duration: "Sep 2017 – Jul 2018",
-            description: "Received professional training in frontend development and UI/UX principles.",
-            responsibilities: [
-                "Worked on modules of major projects for various clients",
-                "Received professional training in front-end technologies and design principles",
-                "Collaborated with a team of four to design user interfaces",
-                "Focused on usability and aesthetic appeal in application design",
-            ],
-            features: ["Design principles", "Client-centric UI", "UX thinking"],
-            technologies: ["UI/UX Design", "Frontend Development", "Client Projects", "Team Collaboration"],
+            features: ["IoT integration", "Real-time monitoring", "Data pipeline", "Device management"],
+            technologies: [".NET Core", "Azure IoT Hub", "Azure Functions", "SQL Server", "REST APIs"],
         },
     ];
 
@@ -54,11 +40,11 @@ const Internship = () => {
                 {/* Header */}
                 <div className="text-center mb-16">
                     <h1 className="text-4xl md:text-5xl font-bold text-purple-900 mb-4">
-                        <span className="text-purple-600">Internships</span> & Training
+                        <span className="text-purple-600">Trainee & Internship</span> Experiences
                     </h1>
                     <div className="w-24 h-1.5 bg-purple-500 mx-auto rounded-full mb-6"></div>
                     <p className="text-xl text-purple-700 max-w-3xl mx-auto">
-                        My early career experiences that shaped my professional journey
+                        Early career experiences that shaped my professional foundation
                     </p>
                 </div>
 
@@ -71,7 +57,7 @@ const Internship = () => {
                                 {/* Ribbon for type */}
                                 <div
                                     className={`absolute top-0 right-0 px-4 py-1 text-xs font-bold text-white ${
-                                        exp.type === "Internship" ? "bg-purple-600" : "bg-emerald-600"
+                                        exp.type === "Internship" ? "bg-blue-600" : "bg-emerald-600"
                                     }`}
                                 >
                                     {exp.type}

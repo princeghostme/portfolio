@@ -2,26 +2,61 @@ import { Link } from "react-router-dom";
 import { Star, StarHalf, StarOff } from "lucide-react";
 
 const skills = [
+    // Backend Technologies
     { name: "ASP.NET Core", rating: 5 },
-    { name: "REST & Web API", rating: 5 },
-    { name: "Entity Framework", rating: 4.5 },
-    { name: "React", rating: 4 },
-    { name: "Angular", rating: 3.5 },
-    { name: "JavaScript/TypeScript", rating: 4 },
-    { name: "SQL Server", rating: 4.5 },
-    { name: "PostgreSQL", rating: 3.5 },
-    { name: "Azure Functions", rating: 4 },
-    { name: "Azure DevOps", rating: 4 },
-    { name: "Blob Storage", rating: 4 },
-    { name: "Docker", rating: 3.5 },
-    { name: "Cosmos DB", rating: 3 },
-    { name: "Redis Caching", rating: 3.5 },
-    { name: "Microservices Architecture", rating: 4 },
-    { name: "CI/CD Pipelines", rating: 4 },
-    { name: "SignalR/WebSockets", rating: 3.5 },
-    { name: "Authentication (JWT/OAuth)", rating: 4 },
-    { name: "Power Automate / SharePoint", rating: 4 },
-    { name: "Dapper ORM", rating: 3.5 },
+    { name: "Node.js", rating: 4.5 },
+    { name: "Express.js", rating: 4.5 },
+    { name: "REST APIs", rating: 5 },
+    { name: "GraphQL", rating: 3.5 },
+    { name: "gRPC", rating: 3 },
+    
+    // Frontend Technologies
+    { name: "React", rating: 4.5 },
+    { name: "Angular", rating: 4 },
+    { name: "TypeScript", rating: 4.5 },
+    { name: "Next.js", rating: 3.5 },
+    { name: "Redux", rating: 4 },
+    
+    // Databases
+    { name: "SQL Server", rating: 5 },
+    { name: "PostgreSQL", rating: 4.5 },
+    { name: "MongoDB", rating: 4 },
+    { name: "Cosmos DB", rating: 4 },
+    { name: "Redis Caching", rating: 4.5 },
+    
+    // Cloud & Infrastructure
+    { name: "Azure (App Service, Functions)", rating: 4.5 },
+    { name: "AWS (EC2, S3, Lambda, RDS)", rating: 4 },
+    { name: "Docker", rating: 4 },
+    { name: "Kubernetes", rating: 3.5 },
+    
+    // Real-time & Messaging
+    { name: "WebSockets", rating: 4 },
+    { name: "SignalR", rating: 4 },
+    { name: "Kafka", rating: 3.5 },
+    { name: "Azure Service Bus", rating: 4 },
+    
+    // Architecture & Patterns
+    { name: "Microservices", rating: 4.5 },
+    { name: "Event-Driven Architecture", rating: 4 },
+    { name: "CQRS Pattern", rating: 3.5 },
+    { name: "API Gateway", rating: 4 },
+    
+    // Security & Auth
+    { name: "JWT", rating: 4.5 },
+    { name: "OAuth2 & OIDC", rating: 4 },
+    { name: "Entra ID", rating: 4 },
+    { name: "PASETO", rating: 3.5 },
+    
+    // AI & ML
+    { name: "LangChain", rating: 3.5 },
+    { name: "OpenAI API", rating: 3.5 },
+    { name: "RAG (Retrieval-Augmented Generation)", rating: 3 },
+    
+    // DevOps & CI/CD
+    { name: "CI/CD (GitHub Actions, Azure DevOps)", rating: 4 },
+    { name: "Entity Framework Core", rating: 4.5 },
+    { name: "Power Automate & SharePoint", rating: 4 },
 ];
 
 

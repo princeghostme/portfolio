@@ -4,150 +4,195 @@ const technologies = [
   {
     category: "Languages",
     items: [
-      { name: "HTML/CSS", level: "Advanced" },
-      { name: "JavaScript", level: "Advanced" },
-      { name: "TypeScript", level: "Advanced" },
       { name: "C#", level: "Advanced" },
+      { name: "TypeScript", level: "Advanced" },
+      { name: "JavaScript", level: "Advanced" },
       { name: "Python", level: "Intermediate" },
-      { name: "SQL", level: "Advanced" }
+      { name: "SQL", level: "Advanced" },
+      { name: "HTML/CSS", level: "Advanced" }
     ]
   },
   {
-    category: "Frameworks",
+    category: "Backend Frameworks",
     items: [
       { name: "ASP.NET Core", level: "Advanced" },
-      { name: "ASP.NET MVC", level: "Advanced" },
-      { name: "React", level: "Advanced" },
-      { name: "Node.js", level: "Intermediate" },
-      { name: "Entity Framework", level: "Advanced" },
-      { name: "Express", level: "Intermediate" },
-      { name: "Blazor", level: "Intermediate" }
+      { name: "Node.js", level: "Advanced" },
+      { name: "Express.js", level: "Advanced" },
+      { name: "Entity Framework Core", level: "Advanced" },
+      { name: "ASP.NET MVC", level: "Advanced" }
     ]
   },
   {
-    category: "Backend Technologies",
+    category: "Frontend Frameworks",
     items: [
-      { name: "RESTful APIs", level: "Advanced" },
-      { name: "Web APIs", level: "Advanced" },
-      { name: "WebSockets", level: "Intermediate" },
-      { name: "SignalR", level: "Intermediate" },
-      { name: "OAuth/JWT", level: "Advanced" },
-      { name: "API Gateway", level: "Intermediate" }
+      { name: "React", level: "Advanced" },
+      { name: "Angular", level: "Advanced" },
+      { name: "Next.js", level: "Intermediate" },
+      { name: "Redux", level: "Advanced" },
+      { name: "TypeScript", level: "Advanced" }
+    ]
+  },
+  {
+    category: "APIs & Protocols",
+    items: [
+      { name: "REST APIs", level: "Advanced" },
+      { name: "GraphQL", level: "Intermediate" },
+      { name: "gRPC", level: "Basic" },
+      { name: "WebSockets", level: "Advanced" },
+      { name: "SignalR", level: "Advanced" }
     ]
   },
   {
     category: "Databases",
     items: [
       { name: "SQL Server", level: "Advanced" },
-      { name: "Azure SQL", level: "Intermediate" },
-      { name: "PostgreSQL", level: "Intermediate" },
-      { name: "MongoDB", level: "Intermediate" },
-      { name: "Redis", level: "Intermediate" },
-      { name: "ClickHouse", level: "Basic" },
-      { name: "Cosmos DB", level: "Basic" }
+      { name: "PostgreSQL", level: "Advanced" },
+      { name: "MongoDB", level: "Advanced" },
+      { name: "Cosmos DB", level: "Intermediate" },
+      { name: "Redis", level: "Advanced" },
+      { name: "Elasticsearch", level: "Intermediate" }
     ]
   },
   {
-    category: "Cloud & DevOps",
+    category: "Cloud & Infrastructure",
     items: [
-      { name: "Azure", level: "Intermediate" },
-      { name: "Azure App Services", level: "Intermediate" },
-      { name: "Azure Blob Storage", level: "Intermediate" },
-      { name: "Azure DevOps", level: "Intermediate" },
-      { name: "CI/CD Pipelines", level: "Intermediate" },
-      { name: "Docker", level: "Basic" },
-      { name: "Amazon S3", level: "Basic" }
+      { name: "Azure App Services", level: "Advanced" },
+      { name: "Azure Functions", level: "Advanced" },
+      { name: "Azure SQL", level: "Advanced" },
+      { name: "Azure Service Bus", level: "Intermediate" },
+      { name: "AWS EC2/S3/Lambda/RDS", level: "Intermediate" },
+      { name: "Docker", level: "Intermediate" },
+      { name: "Kubernetes", level: "Basic" }
     ]
   },
   {
-    category: "Tools & Platforms",
+    category: "Message Queue & Events",
     items: [
-      { name: "Visual Studio", level: "Advanced" },
-      { name: "VS Code", level: "Advanced" },
-      { name: "Git/GitHub", level: "Advanced" },
-      { name: "Bitbucket", level: "Intermediate" },
-      { name: "Postman", level: "Advanced" },
-      { name: "Swagger", level: "Advanced" },
-      { name: "Jenkins", level: "Intermediate" },
-      { name: "SharePoint", level: "Intermediate" }
+      { name: "Kafka", level: "Intermediate" },
+      { name: "Azure Service Bus", level: "Intermediate" },
+      { name: "AWS SQS", level: "Intermediate" },
+      { name: "Event-Driven Architecture", level: "Advanced" },
+      { name: "Message Broadcasting", level: "Intermediate" }
     ]
   },
   {
-    category: "API Performance",
+    category: "Microservices & Architecture",
     items: [
-      { name: "Caching Strategies", level: "Intermediate" },
-      { name: "API Rate Limiting", level: "Intermediate" },
-      { name: "Response Optimization", level: "Intermediate" },
-      { name: "Load Balancing", level: "Intermediate" },
-      { name: "Query Optimization", level: "Advanced" },
-      { name: "Asynchronous Processing", level: "Advanced" }
+      { name: "Microservices", level: "Advanced" },
+      { name: "API Gateway Pattern", level: "Advanced" },
+      { name: "CQRS Pattern", level: "Intermediate" },
+      { name: "Saga Pattern", level: "Intermediate" },
+      { name: "Service-to-Service Communication", level: "Advanced" }
     ]
   },
   {
-    category: "UI/UX",
+    category: "Authentication & Security",
     items: [
-      { name: "Bootstrap", level: "Advanced" },
-      { name: "Tailwind CSS", level: "Intermediate" },
-      { name: "jQuery", level: "Intermediate" },
-      { name: "UI/UX Principles", level: "Intermediate" }
+      { name: "JWT", level: "Advanced" },
+      { name: "OAuth2 & OIDC", level: "Advanced" },
+      { name: "Entra ID (Azure AD)", level: "Advanced" },
+      { name: "PASETO", level: "Intermediate" },
+      { name: "Okta", level: "Intermediate" }
+    ]
+  },
+  {
+    category: "AI & Machine Learning",
+    items: [
+      { name: "LangChain", level: "Intermediate" },
+      { name: "OpenAI API", level: "Intermediate" },
+      { name: "RAG (Retrieval-Augmented Generation)", level: "Basic" },
+      { name: "LLM Integration", level: "Intermediate" }
+    ]
+  },
+  {
+    category: "DevOps & CI/CD",
+    items: [
+      { name: "GitHub Actions", level: "Advanced" },
+      { name: "Azure DevOps", level: "Advanced" },
+      { name: "CI/CD Pipelines", level: "Advanced" },
+      { name: "Docker & Containerization", level: "Intermediate" },
+      { name: "Infrastructure as Code", level: "Intermediate" }
+    ]
+  },
+  {
+    category: "Microsoft Tools",
+    items: [
+      { name: "Power Automate", level: "Intermediate" },
+      { name: "SharePoint", level: "Intermediate" },
+      { name: "Azure DevOps", level: "Advanced" },
+      { name: "Visual Studio", level: "Advanced" }
     ]
   }
 ];
 
 const additionalSkills = [
-  // Software Development Practices
-  "Agile Methodologies",
-  "Scrum & Sprint Planning",
-  "Code Review",
-  "Technical Documentation",
-  "Clean Architecture",
-  "Design Patterns (SOLID, Repository, CQRS)",
-  "Test-Driven Development (TDD)",
-  "Dependency Injection",
-  "Version Control (Git, Bitbucket)",
-
   // System Design & Architecture
   "Microservices Architecture",
-  "Event-Driven Architecture",
+  "Event-Driven Systems",
+  "CQRS Pattern",
+  "Saga Pattern",
+  "API Gateway Layer",
+  "Service-Oriented Architecture",
   "Domain-Driven Design (DDD)",
-  "API Gateway Pattern",
-  "Authentication & Authorization (JWT, OAuth2)",
-  "Rate Limiting & Throttling",
-  "Caching Strategies (Redis, Memory Cache)",
+  "Clean Architecture",
 
-  // Database & Data Flow
-  "Database Design",
-  "Performance Optimization",
+  // Performance & Optimization
+  "Performance Optimization (20-30% improvement)",
   "Query Optimization",
-  "Chunked Data Transfer",
-  "CAML Query",
+  "Caching Strategies (Redis, In-Memory)",
+  "Load Balancing",
+  "Rate Limiting & Throttling",
+  "Async/Await Patterns",
+  "Connection Pooling",
+
+  // Real-time Systems
+  "High Concurrency Support (~10K users)",
+  "Real-time Data Updates (SignalR, WebSockets)",
+  "Live Monitoring Systems",
+  "Real-time Dashboards",
+
+  // AI & Emerging Technologies
+  "AI-Assisted Features",
+  "RAG (Retrieval-Augmented Generation)",
+  "LLM API Integration",
+  "Prompt Engineering",
+  "AI Chatbots & Assistants",
+
+  // Development Practices
+  "Agile & Scrum",
+  "Test-Driven Development (TDD)",
+  "Code Review & Best Practices",
+  "SOLID Principles",
+  "Design Patterns",
+  "Git Version Control",
+  "Technical Documentation",
+
+  // Team & Leadership
+  "Team Mentoring",
+  "Cross-functional Collaboration",
+  "Requirements Analysis",
+  "Technical Specification",
+  "Client Communication",
+
+  // Database Design & Management
+  "Database Design",
   "ETL Pipelines",
   "Data Migration",
+  "Backup & Recovery",
+  "Index Optimization",
 
-  // Frontend/Rendering Strategies
-  "Server Side Rendering (SSR)",
-  "Client Side Rendering (CSR)",
-  "Component-Based UI Architecture",
+  // Security & Compliance
+  "OAuth2 & OpenID Connect",
+  "JWT Token Management",
+  "Secure API Design",
+  "Data Encryption",
+  "HIPAA Compliance (Healthcare)",
 
-  // DevOps & Cloud
-  "CI/CD Pipelines",
-  "Azure DevOps",
-  "Docker & Containerization",
-  "Infrastructure as Code (IaC)",
-  "Monitoring & Logging (App Insights, Log Analytics)",
-
-  // Microsoft & Integration Tools
-  "Power Automate",
-  "SharePoint Workflow",
-  "Timer Jobs",
-  "Integration with 3rd-party APIs (Razorpay, ClickHouse, etc.)",
-
-  // Project/Team Management
-  "Task Estimation & Prioritization",
-  "Mentoring Junior Developers",
-  "Client Communication & Demos",
-  "Technical Leadership in Cross-functional Teams",
-  "Requirements Gathering & Analysis"
+  // Other Skills
+  "Problem Solving",
+  "Continuous Learning",
+  "System Troubleshooting",
+  "Technical Leadership"
 ];
 
 const TechnologiesDetails = () => {

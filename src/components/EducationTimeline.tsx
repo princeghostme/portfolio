@@ -14,69 +14,34 @@ export interface EducationEntry {
 
 const educationData: EducationEntry[] = [
   {
-    duration: "Aug 2019 – Jul 2021",
+    duration: "2019 – 2021",
     degree: "Master of Computer Application (MCA)",
-    university: "Reva University, Bangalore",
-    gpa: "CGPA: 8.7/10",
+    university: "Reva University, Bengaluru",
     highlights: [
-      "Specialized in Full Stack Development, Software Engineering, and Cloud Computing.",
+      "Specialized in Full Stack Development, Software Engineering, and Distributed Systems.",
+      "Strong foundation in Microservices Architecture and Cloud Computing.",
       "Participated in multiple coding hackathons and algorithmic contests.",
     ],
     projects: [
-      "Developed a Document Management System using .NET Core and Angular.",
-      "Built a Leave Management System integrated with Azure SQL and Blob Storage."
+      "Built full-stack applications with .NET Core and modern frontend frameworks.",
+      "Developed systems focusing on scalability and performance optimization."
     ],
-    technologies: ["ASP.NET Core", "Angular", "SQL Server", "Azure", "Git"],
-    extracurriculars: [
-      "Represented university in inter-college tech fest.",
-      "Volunteered as technical coordinator in MCA Department Club."
-    ],
+    technologies: ["ASP.NET Core", "React", "Angular", "SQL Server", "Azure", "Docker"],
   },
   {
-    duration: "Aug 2016 – Jul 2019",
+    duration: "2016 – 2019",
     degree: "Bachelor of Computer Application (BCA)",
-    university: "ICFAI University, Bangalore",
-    gpa: "CGPA: 8.4/10",
+    university: "ICFAI University, Bengaluru",
     highlights: [
-      "Built a strong foundation in Object-Oriented Programming, DBMS, and Web Development.",
-      "Completed mini-projects each semester based on Java and MySQL."
+      "Built strong foundation in Object-Oriented Programming, DBMS, and Web Development.",
+      "Excelled in software engineering principles and design patterns.",
+      "Participated in tech competitions and contributed to academic projects."
     ],
     projects: [
-      "Created a Student Feedback Portal using PHP and MySQL.",
-      "Contributed to a group project on E-commerce website development."
+      "Developed multiple web applications using contemporary technologies.",
+      "Contributed to group projects on system design and architecture."
     ],
-    technologies: ["Java", "C++", "PHP", "MySQL", "HTML", "CSS", "JavaScript"],
-    extracurriculars: [
-      "Participated in debugging competitions and seminars.",
-      "Member of Web Development Club."
-    ],
-  },
-  {
-    duration: "Apr 2015 – Jun 2016",
-    degree: "Higher Secondary Education (Class XII, PCM)",
-    university: "Army Public School, CBSE Board",
-    gpa: "Percentage: 86%",
-    highlights: [
-      "Completed with Physics, Chemistry, and Mathematics as core subjects.",
-      "Excelled in Computer Science elective with programming assignments in C++."
-    ],
-    extracurriculars: [
-      "Member of the school quiz and robotics team.",
-      "Completed a summer course in Basic Web Development."
-    ],
-  },
-  {
-    duration: "Apr 2012 – Mar 2013",
-    degree: "Secondary School (Class X)",
-    university: "Army Public School, CBSE Board",
-    gpa: "CGPA: 9.2/10",
-    highlights: [
-      "Built strong basics in Mathematics and Logical Reasoning.",
-      "Introduced to foundational programming and computer applications."
-    ],
-    extracurriculars: [
-      "Active participant in inter-school tech and sports competitions.",
-    ],
+    technologies: ["Java", "Python", "PHP", "MySQL", "HTML5", "CSS3", "JavaScript"],
   },
 ];
 
