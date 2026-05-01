@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { RESUME } from "../AppConstraint";
 import GrowthStack from "./GrowthStack";
-import { FiDownload, FiArrowRight, FiFileText } from "react-icons/fi";
+import { FiFileText } from "react-icons/fi";
 
 const PageHeader = () => {
   const [isCreating, setIsCreating] = useState(false);
