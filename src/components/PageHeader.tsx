@@ -1,8 +1,31 @@
+import { useState } from "react";
 import { RESUME } from "../AppConstraint";
 import GrowthStack from "./GrowthStack";
-import { FiDownload, FiArrowRight } from "react-icons/fi";
+import { FiDownload, FiArrowRight, FiFileText } from "react-icons/fi";
 
 const PageHeader = () => {
+  const [isCreating, setIsCreating] = useState(false);
+
+  const createResumeOnDemand = async () => {
+    try {
+      setIsCreating(true);
+      const response = await fetch(RESUME.PDF);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "Prince_Resume.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error("Unable to create resume:", error);
+    } finally {
+      setIsCreating(false);
+    }
+  };
+
   return (
     <header className="relative text-purple-900 py-16 md:py-32 bg-gradient-to-br from-purple-50 via-white to-blue-50 overflow-hidden">
       {/* Decorative elements */}
@@ -27,18 +50,12 @@ const PageHeader = () => {
 
         {/* Subheading */}
         <p className="text-xl md:text-2xl text-center mb-4 font-medium text-purple-800/90 max-w-3xl">
-          Building{" "}
-          <span className="font-bold text-purple-900">
-            scalable, high-performance systems
-          </span>{" "}
-          that handle 10K+ concurrent users
+          Building <span className="font-bold text-purple-900">scalable, high-performance systems</span> that handle 10K+ concurrent users.
         </p>
-        
+
         {/* Secondary description */}
         <p className="text-lg text-center mb-12 text-gray-700 max-w-4xl leading-relaxed">
-          Specialized in <span className="font-semibold text-purple-700">backend engineering</span>, <span className="font-semibold text-purple-700">microservices architecture</span>, and <span className="font-semibold text-purple-700">performance optimization</span>. 
-          I design and develop systems using <span className="font-semibold">ASP.NET Core, Node.js, React</span>, and <span className="font-semibold">cloud technologies</span>. 
-          Currently exploring <span className="font-semibold text-purple-700">AI-assisted features with RAG & LLM APIs</span>.
+          Specialized in <span className="font-semibold text-purple-700">backend engineering</span>, <span className="font-semibold text-purple-700">microservices</span>, and <span className="font-semibold text-purple-700">performance optimization</span>. I design systems using <span className="font-semibold">ASP.NET Core, Node.js, React</span>, and <span className="font-semibold">cloud-native architectures</span>.
         </p>
 
         {/* Timeline Component */}
@@ -46,38 +63,21 @@ const PageHeader = () => {
           <GrowthStack />
         </div>
 
-        {/* Enhanced Resume Button */}
-        <div className="flex gap-4 justify-center w-full">
-          <div>
-            <a
-              href={RESUME.PDF}
-              download="Prince_Resume.pdf"
-              className="relative flex items-center px-8 py-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              <span className="text-lg font-semibold text-purple-900 group-hover:text-purple-700 transition-colors">
-                Download Resume (pdf format)
-              </span>
-              <div className="ml-3 flex items-center space-x-2">
-                <FiDownload className="w-5 h-5 text-purple-600 group-hover:text-purple-800 transition-colors" />
-                <FiArrowRight className="w-4 h-4 text-purple-600 opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all" />
-              </div>
-            </a>
-          </div>
-          <div>
-            <a
-              href={RESUME.DOCX}
-              download="Prince_Resume.docx"
-              className="relative flex items-center px-8 py-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              <span className="text-lg font-semibold text-purple-900 group-hover:text-purple-700 transition-colors">
-                Download Resume (word format)
-              </span>
-              <div className="ml-3 flex items-center space-x-2">
-                <FiDownload className="w-5 h-5 text-purple-600 group-hover:text-purple-800 transition-colors" />
-                <FiArrowRight className="w-4 h-4 text-purple-600 opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all" />
-              </div>
-            </a>
-          </div>
+        {/* Create Resume Button */}
+        <div className="flex flex-col items-center gap-4 justify-center w-full">
+          <button
+            type="button"
+            onClick={createResumeOnDemand}
+            disabled={isCreating}
+            className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 px-8 py-4 text-base font-semibold text-white shadow-xl shadow-purple-500/20 transition duration-300 hover:-translate-y-0.5 hover:shadow-2xl disabled:cursor-not-allowed disabled:opacity-70"
+          >
+            <FiFileText className="h-5 w-5" />
+            {isCreating ? "Creating Resume..." : "Create Resume"}
+          </button>
+
+          <p className="text-sm text-gray-600 max-w-md text-center">
+            Click the button to generate your resume on demand. The PDF will download automatically.
+          </p>
         </div>
       </div>
     </header>
